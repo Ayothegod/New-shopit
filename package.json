@@ -1,0 +1,32 @@
+{
+  "name": "javasript",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.15",
+    "@next/font": "13.1.2",
+    "@tanstack/react-query": "^4.28.0",
+    "eslint": "8.31.0",
+    "eslint-config-next": "13.1.2",
+    "next": "13.1.2",
+    "next-auth": "^4.20.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "zustand": "^4.3.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
+  }
+}

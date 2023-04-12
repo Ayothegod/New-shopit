@@ -1,0 +1,17 @@
+@tailwind base;
+
+.scroller {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+.scroller::-webkit-scrollbar {
+  width: 10px;
+}
+.scroller::-webkit-scrollbar-thumb {
+  background-color: rgb(163, 150, 150);
+  border-radius: 15px;
+}
+
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
