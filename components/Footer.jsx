@@ -1,7 +1,7 @@
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
+// import FacebookIcon from '@mui/icons-material/Facebook';
+// import TwitterIcon from '@mui/icons-material/Twitter';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
   return (
@@ -55,12 +55,12 @@ const Footer = () => {
       </div>
       <div className='bg-footer p-4 flex flex-col justify-center items-center gap-y-2 '>
         <p className='font-medium text-md'>JOIN US ON</p>
-        <div className='flex gap-x-4'>
+        {/* <div className='flex gap-x-4'>
           <FacebookIcon className='text-blue-600'/>
           <InstagramIcon className='text-red-600'/>
           <LinkedInIcon className='text-blue-400'/>
           <TwitterIcon className='text-blue-600'/>
-        </div>
+        </div> */}
       </div>
       </div>
     </div>
