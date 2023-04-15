@@ -6,6 +6,7 @@ const Body = () => {
     <div>
       Hello, what is going on here
         {/* <Carousel/> */}
+        <p>Hello</p>
         <Carousel/>
     </div>
   )
