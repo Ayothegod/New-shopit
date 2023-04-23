@@ -15,9 +15,16 @@ export default{
   },
   {
     type:"image",
-    name:"niceimage",
+    name:"image",
     title:"image",
-    description:"input-image"
+    description:"add image, compulsory",
+    fields:[
+      {
+        name:"caption",
+        type:"string",
+        title:"caption",
+      }
+    ]
   }
 ]
 }
