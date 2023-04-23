@@ -14,7 +14,7 @@ const Header = () => {
           </p>
           <div className="flex sm:hidden gap-2 ">
             <PersonIcon className=" " />
-            <ShoppingCartIcon className=''/> 
+            <ShoppingCartIcon className="" />
           </div>
         </div>
 
@@ -30,15 +30,21 @@ const Header = () => {
             </button>
           </div>
           <div className="hidden md:flex md:justify-between md:gap-x-6 text-lg md:items-center">
-            <div className="flex items-center gap-x-1 ">
-              <PersonIcon className=''/>
+            <div className="flex items-center gap-x-1 relative">
+              <PersonIcon className="" />
               <p className="">Account</p>
-              <KeyboardArrowDownIcon/>
+              <KeyboardArrowDownIcon />
 
-              
+              <div className="absolute top-14 p-4 rounded-md bg-white shadow-lg flex flex-col gap-y-2 ">
+                <h1 className="text-[#999]">
+                  Hi <span className="text-orange-600 font-semibold text-md ">user</span>
+                </h1>
+                <p className="text-xs text-[#999]">not signed in? </p>
+                <button className="text-white bg-orange-600 py-0 px-2 rounded-md border-none">sign in</button>
+              </div>
             </div>
             <div className="flex items-center gap-x-1 ">
-              <ShoppingCartIcon className=''/>
+              <ShoppingCartIcon className="" />
               <p className="">Cart</p>
             </div>
           </div>
@@ -47,8 +53,5 @@ const Header = () => {
     </div>
   );
 };
-
-
-
 
 export default Header;
