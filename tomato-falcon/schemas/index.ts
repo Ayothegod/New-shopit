@@ -1,5 +1,5 @@
-import pet from './pet'
-import shirts from './shirts'
-import shorts from './shorts'
+import watches from "./watches";
+import shirts from "./shirts";
+import shorts from "./shorts";
 
-export const schemaTypes = [pet,shirts,shorts]
+export const schemaTypes = [watches, shirts, shorts];
