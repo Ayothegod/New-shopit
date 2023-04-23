@@ -1,5 +1,8 @@
 import { Router, useRouter } from "next/router"
-import { createClient } from "next-sanity";
+// import { createClient } from "next-sanity";
+import imageUrlBuilder from '@sanity/image-url'
+import Image from "next/image";
+import {client} from "@/utils/client"
 
 
 // const router = useRouter()
@@ -8,22 +11,21 @@ import { createClient } from "next-sanity";
 // console.log(id);
 
 
+// function urlFor (source) {
+//   return imageUrlBuilder(client).image(source)
+// }
+
 const slug = ({short}) => {
   console.log(short);
   
   return (
     <article>
       <h1>{short?.slug?.current}</h1>
+      {/* <Image src={} alt="hello"/> */}
     </article>
   )
 }
 
-const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET,
-  apiVersion: process.env.SANITY_APIVERSION,
-  useCdn: process.env.SANITY_USECDN,
-});
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
