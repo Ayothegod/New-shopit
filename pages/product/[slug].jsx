@@ -1,27 +1,45 @@
-import { Router, useRouter } from "next/router"
+import { useRouter } from "next/router"
 // import { createClient } from "next-sanity";
 import imageUrlBuilder from '@sanity/image-url'
-import Image from "next/image";
 import {client} from "@/utils/client"
+import Image from "next/image"
+import { useNextSanityImage } from 'next-sanity-image';
 
 
-// const router = useRouter()
-// // const {id} = router.query
-// const id = router.query.slug
-// console.log(id);
+//const imageProps = useNextSanityImage(configuredSanityClient, mySanityData.image);
 
-
-// function urlFor (source) {
-//   return imageUrlBuilder(client).image(source)
-// }
 
 const slug = ({short}) => {
+  function urlFor (source) {
+    return imageUrlBuilder(client).image(source)
+  }
+  // console.log(urlFor)
+
+  // const {
+  //   title
+  // } = short
+
+
+  // const imageProps = useNextSanityImage(client, short.image.asset._ref);
+  // console.log(imageProps);
   console.log(short);
   
   return (
     <article>
       <h1>{short?.slug?.current}</h1>
+      <h1>{short?.title}</h1>
       {/* <Image src={} alt="hello"/> */}
+
+      {/* {short.image && (
+        <div>
+          <img
+            src={urlFor(short.image)
+              .width(50)
+              .url()}
+              
+          />
+        </div>
+      )} */}
     </article>
   )
 }
