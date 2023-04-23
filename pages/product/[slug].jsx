@@ -4,7 +4,9 @@ import { Router, useRouter } from "next/router"
 
 const slug = () => {
   const router = useRouter()
-  const id = router.query.id
+  // const {id} = router.query
+  const id = router.query.slug
+  console.log(id);
 
   return (
     <div>

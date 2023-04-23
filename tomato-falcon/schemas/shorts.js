@@ -6,17 +6,33 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Title-nation",
+      title: "title",
+      description: "title or name of the product",
     },
     {
       name: "description",
       type: "string",
-      title: "Description",
+      title: "description",
+      description: "description of the products",
     },
     {
       name: "slug",
       type: "slug",
       title: "slug",
+      description: "slug to get individual products",
+    },
+    {
+      name: "categories",
+      type: "array",
+      title: "categories",
+      of:[{type:"string"}],
+      description: "can add any number of categories",
+    },
+    {
+      name: "rating",
+      type: "number",
+      title: "rating",
+      description: "numbers only, 1 - 5",
     },
     {
       type: "image",

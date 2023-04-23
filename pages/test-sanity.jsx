@@ -1,7 +1,8 @@
 import { createClient } from "next-sanity";
 
-export default function TestSanity({ watches }) {
+export default function TestSanity({ watches,shorts }) {
   console.log(watches);
+  console.log({"shorts":shorts});
   return (
     <>
       <main>
@@ -42,11 +43,12 @@ const client = createClient({
 export async function getStaticProps() {
   
   const watches = await client.fetch(`*[_type == "watches"]`);
-  const shirts = await client.fetch(`*[_type == "watches"]`);
+  const shorts = await client.fetch(`*[_type == "shorts"]`);
   
   return {
       props: {
-      watches
+      watches,
+      shorts
     }
 };
 }
