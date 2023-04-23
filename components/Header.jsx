@@ -7,13 +7,14 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const Header = () => {
   return (
     <div className="bg-white shadow-lg sticky top-0  ">
-      <div className="flex flex-col sm:flex-row sm:justify-between  sm:items-center max-w-[72rem] py-2 px-4 m-auto">
+      <div className="flex flex-col sm:flex-row sm:justify-between  sm:items-center max-w-[72rem] py-2 px-2 m-auto">
         <div className="flex items-center justify-between ">
           <p className="text-lg md:text-3xl md:py-2  font-ptsans font-bold ">
             Shop-It
           </p>
-          <div className="flex sm:hidden ">
+          <div className="flex sm:hidden gap-2 ">
             <PersonIcon className=" " />
+            <ShoppingCartIcon className=''/> 
           </div>
         </div>
 
@@ -29,14 +30,15 @@ const Header = () => {
             </button>
           </div>
           <div className="hidden md:flex md:justify-between md:gap-x-4 text-lg md:items-center">
-            <div className=" ">
+            <div className="flex items-center gap-x-1 ">
+              <PersonIcon className=''/>
               <p className="">Account</p>
+              <KeyboardArrowDownIcon/>
             </div>
-            <div className="">
-              <p className="">help</p>
-            </div>
-            <div className="">
+            <div className="flex items-center gap-x-1 ">
+              <ShoppingCartIcon className=''/>
               <p className="">Cart</p>
+              <KeyboardArrowDownIcon/>
             </div>
           </div>
         </div>
@@ -45,25 +47,7 @@ const Header = () => {
   );
 };
 
-{
-  /* <PersonIcon className=''/> */
-}
-{
-  /* <KeyboardArrowDownIcon/> */
-}
-{
-  /* <HelpIcon className=''/> */
-}
-{
-  /* <KeyboardArrowDownIcon/> */
-}
-{
-  /* <ShoppingCartIcon className=''/> */
-}
-{
-  /* <KeyboardArrowDownIcon/>  */
-}
 
-//           {/* <MenuIcon className='font-black text-2xl md:hidden'/> */}
+
 
 export default Header;
