@@ -1,22 +1,31 @@
 import { createClient } from "next-sanity";
 
-export default function TestSanity({ watches,shorts }) {
+export default function TestSanity({ watches, shorts }) {
   console.log(watches);
-  console.log({"shorts":shorts});
+  console.log({ shorts: shorts });
   return (
     <>
-      <main>
-        <h2>pets</h2>
-
-        {
-          watches.map(watch => (
+      <h2>Products</h2>
+      <main className="flex  justify-between p-8">
+        <div>
+          {watches.map((watch) => (
             <>
-            <p>{watch.title}</p>
-            <p>{watch.description}</p>
-            <p>{watch.slug.current}</p>
+              <p>{watch.title}</p>
+              <p>{watch.description}</p>
+              <p>{watch.slug.current}</p>
             </>
-          ))
-        }
+          ))}
+        </div>
+        <div className="">
+          {shorts.map((watch) => (
+            <>
+              <p>{watch.title}</p>
+              <p>{watch.description}</p>
+              <p>{watch.categories}</p>
+              <p>{watch.slug.current}</p>
+            </>
+          ))}
+        </div>
 
         {/* {!watches.length > 0 && <p>No pets to show</p>} */}
 
@@ -36,19 +45,18 @@ export default function TestSanity({ watches,shorts }) {
 
 const client = createClient({
   projectId: process.env.SANITY_PROJECT_ID,
-    dataset: process.env.SANITY_DATASET,
+  dataset: process.env.SANITY_DATASET,
   apiVersion: process.env.SANITY_APIVERSION,
-  useCdn: process.env.SANITY_USECDN
+  useCdn: process.env.SANITY_USECDN,
 });
 export async function getStaticProps() {
-  
   const watches = await client.fetch(`*[_type == "watches"]`);
   const shorts = await client.fetch(`*[_type == "shorts"]`);
-  
+
   return {
-      props: {
+    props: {
       watches,
-      shorts
-    }
-};
+      shorts,
+    },
+  };
 }
