@@ -1,27 +1,33 @@
 import { createClient } from "next-sanity";
 
-export default function TestSanity({ pets }) {
+export default function TestSanity({ watches }) {
+  console.log(watches);
   return (
     <>
-      <header>
-        <h1>Sanity + Next.js</h1>
-      </header>
       <main>
         <h2>pets</h2>
-        {pets.length > 0 && (
+        {/* {watches.length > 0 && 
+
           <ul>
-            {pets.map((pet) => (
-              <li key={pet._id}>{pet?.name}</li>
+            {watches.map((watch) => (
+              <li key={watch._id}>{watch?.name}</li>
             ))}
           </ul>
-        )}
-        {!pets.length > 0 && <p>No pets to show</p>}
-        {pets.length > 0 && (
-          <div>
-            <pre>{JSON.stringify(pets,null,2)}</pre>
-          </div>
-        )}
-        {!pets.length > 0 && (
+
+        } */}
+
+        {
+          watches.map(watch => (
+            <>
+            <p>{watch.title}</p>
+            <p>{watch.description}</p>
+            </>
+          ))
+        }
+
+        {/* {!watches.length > 0 && <p>No pets to show</p>} */}
+
+        {/* {!watches.length > 0 && (
           <div>
             <div>¯\_(ツ)_/¯</div>
             <p>
@@ -29,7 +35,7 @@ export default function TestSanity({ pets }) {
               correctly
             </p>
           </div>
-        )}
+        )} */}
       </main>
     </>
   );
@@ -46,11 +52,11 @@ const client = createClient({
 export async function getStaticProps() {
   
 
-  const pets = await client.fetch(`*[_type == "shirts"]`);
+  const watches = await client.fetch(`*[_type == "watches"]`);
   
   return {
       props: {
-      pets
+      watches
     }
 };
 }
