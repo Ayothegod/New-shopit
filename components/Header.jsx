@@ -29,16 +29,17 @@ const Header = () => {
               Search
             </button>
           </div>
-          <div className="hidden md:flex md:justify-between md:gap-x-4 text-lg md:items-center">
+          <div className="hidden md:flex md:justify-between md:gap-x-6 text-lg md:items-center">
             <div className="flex items-center gap-x-1 ">
               <PersonIcon className=''/>
               <p className="">Account</p>
               <KeyboardArrowDownIcon/>
+
+              
             </div>
             <div className="flex items-center gap-x-1 ">
               <ShoppingCartIcon className=''/>
               <p className="">Cart</p>
-              <KeyboardArrowDownIcon/>
             </div>
           </div>
         </div>
