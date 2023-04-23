@@ -10,15 +10,15 @@ const Header = () => {
   return (
     <div className="bg-white shadow-lg sticky top-0  ">
       <div className="flex flex-col sm:flex-row sm:justify-between  sm:items-center max-w-[72rem] py-2 px-2 m-auto">
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between mb-2 sm:mb-0 ">
           <p className="text-lg md:text-3xl md:py-2  font-ptsans font-bold ">
             Shop-It
           </p>
-          <div className="flex sm:hidden gap-2 ">
+          <div className="flex sm:hidden gap-6 ">
             <div onClick={() => setOpen(!open)}>
               <PersonIcon className=" " />
               {open && (
-                <div className="absolute top-18 py-4 px-6 rounded-md bg-white shadow-lg flex flex-col gap-y-1 w-48 ">
+                <div className="absolute top-24 right-4 py-4 px-6 rounded-md bg-white shadow-lg flex flex-col gap-y-1 w-48 ">
                   <h1 className="text-[#999]">
                     Hi{" "}
                     <span className="text-orange-600 font-semibold text-md ">
