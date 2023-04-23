@@ -1,4 +1,5 @@
 import { createClient } from "next-sanity";
+import Link from "next/link";
 
 export default function TestSanity({ watches, shorts }) {
   console.log(watches);
@@ -7,12 +8,15 @@ export default function TestSanity({ watches, shorts }) {
     <>
       <h2>Products</h2>
       <main className="flex  justify-between p-8">
-        <div>
-          {watches.map((watch) => (
+        <div className="cursor-pointer">
+
+          {shorts.map((watch) => (
             <>
+          <Link href={`/product/${watch.slug.current}`}>
               <p>{watch.title}</p>
               <p>{watch.description}</p>
               <p>{watch.slug.current}</p>
+          </Link>
             </>
           ))}
         </div>
