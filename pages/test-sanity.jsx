@@ -8,25 +8,25 @@ export default function TestSanity({ watches, shorts }) {
     <>
       <h2>Products</h2>
       <main className="flex  justify-between p-8">
-        <div className="cursor-pointer">
-
+        <div className="cursor-pointer flex flex-col gap-10">
           {shorts.map((watch) => (
             <>
-          <Link href={`/product/${watch.slug.current}`}>
-              <p>{watch.title}</p>
-              <p>{watch.description}</p>
-              <p>{watch.slug.current}</p>
-          </Link>
+              <Link href={`/product/${watch.slug.current}`}>
+                <p>{watch.title}</p>
+                <p>{watch.description}</p>
+                <p>{watch.slug.current}</p>
+              </Link>
             </>
           ))}
         </div>
-        <div className="">
+        <div className="cursor-pointer">
           {shorts.map((watch) => (
             <>
-              <p>{watch.title}</p>
-              <p>{watch.description}</p>
-              <p>{watch.categories}</p>
-              <p>{watch.slug.current}</p>
+              <Link href={`/product/${watch.slug.current}`}>
+                <p>{watch.title}</p>
+                <p>{watch.description}</p>
+                <p>{watch.slug.current}</p>
+              </Link>
             </>
           ))}
         </div>
