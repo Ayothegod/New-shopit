@@ -3,19 +3,12 @@ import { useRouter } from "next/router";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
 import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
-
-//const imageProps = useNextSanityImage(configuredSanityClient, mySanityData.image);
 
 const slug = ({ short }) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
   console.log(short);
-  // console.log(urlFor)
-
-  // const imageProps = useNextSanityImage(client, short.image.asset._ref);
-  // console.log(imageProps);
 
   return (
     <article>
