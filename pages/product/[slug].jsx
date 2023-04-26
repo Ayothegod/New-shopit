@@ -12,7 +12,7 @@ const slug = ({ short }) => {
 
   return (
     <article>
-      {/* <h1>{short?.slug?.current}</h1> */}
+      <h1>{short?.slug?.current}</h1>
       <h1>{short?.title}</h1>
       {short?.image && <img src={urlFor(short?.image).url()} alt="hello" />}
     </article>
