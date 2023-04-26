@@ -8,7 +8,7 @@ const slug = ({ short }) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
-  console.log(short);
+  console.log({"short" :short});
 
   return (
     <article>
