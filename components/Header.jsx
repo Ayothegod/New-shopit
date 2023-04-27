@@ -10,9 +10,7 @@ const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <div
-      className={`bg-white shadow-lg sticky top-0 ${
-        openMenu ? " " : "bg-white"
-      } `}
+      className={`bg-white shadow-lg sticky top-0 z-[999]`}
     >
       <div className="flex flex-col sm:flex-row sm:justify-between  sm:items-center max-w-[72rem] py-2 px-2 m-auto">
         <div className="flex items-center justify-between mb-2 sm:mb-0 ">

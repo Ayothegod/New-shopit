@@ -5,12 +5,12 @@
   scrollbar-color: var(--secondary) var(--primary);
 }
 .scroller::-webkit-scrollbar {
-  width: 10px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
 }
 .scroller::-webkit-scrollbar-thumb {
   background-color: rgb(163, 150, 150);
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 @tailwind components;
