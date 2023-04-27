@@ -26,16 +26,11 @@ const Carousel = () => {
       <div className="max-w-[72rem] mx-auto md:flex ">
 
       <section
-          className="hidden md:inline-block border-r border-r-neutral-200 px-2"
+          className="hidden md:inline-block border-2 border-neutral-300 mx-1 px-1 w-[20rem]"
           >
-          <div className=" flex items-center ">
+          <div className="flex flex-col justify-between">
           <div >
-          </div>
-          <p className="text-xl font-bold ml-8">Shop-it</p>
-          </div>
-          <div className="py-2 flex flex-col justify-between h-full">
-          <div >
-          <h3 className="font-bold text-lg text-orange-600">Products. =&gt;</h3>
+          <h3 className="font-bold text-lg text-orange-600">Products.</h3>
           <ul className="flex flex-col gap-4 mt-2">
                 <li>Shirts</li>
                 <li>Watches</li>
@@ -48,8 +43,8 @@ const Carousel = () => {
           </div>
         </section>
 
-        <div className="px-2 py-1 hidden sm:inline-block w-max">
-          <Image src={slider} alt="imagine" className="w-max sm:h-60 md:h-80 object-cover object-center"/>
+        <div className="hidden mx-1 sm:inline-block">
+          <Image src={slider} alt="imagine" className="sm:h-48 md:h-80 object-cover object-center w-screen"/>
         </div>
 
 
