@@ -2,6 +2,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -78,10 +79,18 @@ const Footer = () => {
           <div className=" p-4 flex flex-col justify-center items-center gap-y-2 ">
             <p className="font-medium text-md">JOIN US ON</p>
             <div className="flex gap-x-4">
-              <FacebookIcon className="text-blue-600" />
-              <InstagramIcon className="text-red-600" />
-              <LinkedInIcon className="text-blue-400" />
-              <TwitterIcon className="text-blue-600" />
+              <Link href="https://twitter.com/aiiomide">
+                <TwitterIcon className="text-blue-600 transition duration-100 ease-in hover:-translate-y-2" />
+              </Link>
+              <Link href="https://linkedin.com/in/aiiomide">
+                <LinkedInIcon className="text-blue-400 transition duration-100 ease-in hover:-translate-y-2" />
+              </Link>
+              <Link href="https://github.com/ayothegod">
+                <InstagramIcon className="text-red-600 transition duration-100 ease-in hover:-translate-y-2" />
+              </Link>
+              <Link href="https://twitter.com/aiiomide">
+                <FacebookIcon className="text-blue-600 transition duration-100 ease-in hover:-translate-y-2" />
+              </Link>
             </div>
           </div>
         </div>

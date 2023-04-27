@@ -18,7 +18,7 @@ export default function Home() {
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
         <Body/>
-        {/* <Footer/> */}
+        <Footer/>
       </main>
     </>
   );
