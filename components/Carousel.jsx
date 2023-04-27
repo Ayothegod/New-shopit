@@ -6,7 +6,6 @@ import imager from "utils/asset/20220425_205815.jpg";
 import imagine from "utils/asset/20220506_041426.jpg";
 import imaginate from "utils/asset/20220519_195313.jpg";
 import ima from "utils/asset/20220525_230857.jpg";
-import ImageBox from "./ImageBox";
 
 const Carousel = () => {
   const [current, setCurrent] = useState(0);
@@ -23,7 +22,7 @@ const Carousel = () => {
     setCurrent(slideIndex);
   };
   return (
-    <div className="p-1  bg-white mt-1 ">
+    <div className="p-1  bg-white">
       <div className="max-w-[72rem] mx-auto md:flex ">
 
       <section
@@ -49,12 +48,12 @@ const Carousel = () => {
           </div>
         </section>
 
-        <div className="px-2 py-1 hidden sm:inline-block">
-          <Image src={slider} alt="imagine" className="w-[72rem] sm:h-60 md:h-80 object-cover object-center"/>
+        <div className="px-2 py-1 hidden sm:inline-block w-max">
+          <Image src={slider} alt="imagine" className="w-max sm:h-60 md:h-80 object-cover object-center"/>
         </div>
 
-      <div style={{}} className=" flex w-full flex-col sm:hidden">
-        <div className="scroller flex w-full gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden  ">
+      <div style={{}} className=" flex w-auto flex-col sm:hidden">
+        <div className="scroller flex w-auto gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden  ">
           {slides.map((slide, slideIndex) => (
             <>
               <Image

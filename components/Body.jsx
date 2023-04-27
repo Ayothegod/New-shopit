@@ -1,12 +1,15 @@
-
-import Carousel from "./Carousel"
+import Carousel from "./Carousel";
+import Category from "./Category";
+import Product from "./Product";
 
 const Body = () => {
   return (
     <div>
-        <Carousel/>
+      <Carousel />
+      <Category />
+      <Product />
     </div>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;
