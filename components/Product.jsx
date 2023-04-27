@@ -83,13 +83,32 @@ const Product = () => {
 
         <div style={{}} className=" flex w-auto flex-col sm:hidden">
           <div className="scroller flex w-auto gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden ">
-            {products.map((slide, slideIndex) => (
+            {/* {products.map((slide, slideIndex) => (
               <>
                 <ImageBox slide={slide} slideIndex={slideIndex}/>
               </>
-            ))}
+            ))} */}
           </div>
         </div>
+        <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller my-2 py-2 px-2">
+          {products.map((product) => (
+            <div>
+              <div className="w-60 h-60 relative rounded-md overflow-hidden">
+                <Image
+                  src={product.imgUrl}
+                  alt={product.imgAlt}
+                  fill
+                  className="w-full h-full absolute object-cover object-center"
+                />
+              </div>
+              <div>
+                <p>{product.title}</p>
+                <p>{product.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="my-4">Hello</p>
       </div>
     </div>
     // </div>
