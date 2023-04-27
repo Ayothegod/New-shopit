@@ -68,12 +68,13 @@ const Product = () => {
   return (
     <div className="p-1  bg-white mt-1 ">
       <div className="max-w-[72rem] mx-auto flex flex-col ">
-        <div className="pt-2 px-2">
+        <div className="flex  justify-between items-center">
 
         <p className="font-bold text-xl text-orange-600">New Arrival</p>
+        <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
         </div>
 
-        <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller my-2 py-2 px-2">
+        <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller  py-2 ">
           {products.map((product) => (
             <div>
               <div className="w-60 h-60 relative rounded-md overflow-hidden">
@@ -91,10 +92,8 @@ const Product = () => {
             </div>
           ))}
         </div>
-        <p className="my-4">Hello</p>
       </div>
     </div>
-    // </div>
   );
 };
 
