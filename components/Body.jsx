@@ -1,5 +1,6 @@
 import Carousel from "./Carousel";
 import Category from "./Category";
+import Filter from "./Filter";
 import Product from "./Product";
 
 const Body = () => {
@@ -8,6 +9,7 @@ const Body = () => {
       <Carousel />
       <Category />
       <Product />
+      <Filter/>
     </div>
   );
 };
