@@ -6,6 +6,7 @@ import imager from "utils/asset/20220425_205815.jpg";
 import imagine from "utils/asset/20220506_041426.jpg";
 import imaginate from "utils/asset/20220519_195313.jpg";
 import ima from "utils/asset/20220525_230857.jpg";
+import ImageBox from "./ImageBox";
 
 const Carousel = () => {
   const [current, setCurrent] = useState(0);
@@ -18,24 +19,25 @@ const Carousel = () => {
     { imgUrl: ima, imgAlt: "ima" },
   ];
 
-const gotoSlide = slideIndex => {
-    setCurrent(slideIndex)
-}
+  const gotoSlide = (slideIndex) => {
+    setCurrent(slideIndex);
+  };
   return (
-    <div className="py-1 px-2 bg-white">
-      <div  className=" flex w-full  ">
+    <div className="p-1  bg-white mt-1 ">
+      <div className="max-w-[72rem] mx-auto md:flex ">
+
       <section
-          className="hidden md:inline-block"
-        >
-          <div className=" flex items-center border-b border-b-neutral-200 pb-2">
-            <div >
-            </div>
-            <p className="text-xl font-bold ml-8">Shop-it</p>
+          className="hidden md:inline-block border-r border-r-neutral-200 px-2"
+          >
+          <div className=" flex items-center ">
+          <div >
           </div>
-          <div className="py-6 flex flex-col justify-between h-full">
-            <div >
-              <h3 className="font-bold text-lg text-orange-600">Products. =&gt;</h3>
-              <ul className="flex flex-col gap-4 mt-2">
+          <p className="text-xl font-bold ml-8">Shop-it</p>
+          </div>
+          <div className="py-2 flex flex-col justify-between h-full">
+          <div >
+          <h3 className="font-bold text-lg text-orange-600">Products. =&gt;</h3>
+          <ul className="flex flex-col gap-4 mt-2">
                 <li>Shirts</li>
                 <li>Watches</li>
                 <li>Gown</li>
@@ -47,20 +49,26 @@ const gotoSlide = slideIndex => {
           </div>
         </section>
 
-        <div className="scroller flex gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden  ">
-          {slides.map((slide,slideIndex) => (
+        <div className="px-2 py-1 hidden sm:inline-block">
+          <Image src={slider} alt="imagine" className="w-[72rem] sm:h-60 md:h-80 object-cover object-center"/>
+        </div>
+
+      <div style={{}} className=" flex w-full flex-col sm:hidden">
+        <div className="scroller flex w-full gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden  ">
+          {slides.map((slide, slideIndex) => (
             <>
               <Image
                 key={slideIndex}
                 src={slide.imgUrl}
                 alt={slide.imgAlt}
-                className="w-48 md:w-screen md:h-80 rounded-md mb-1"
+                className="w-48 sm:w-48 sm:h-60 rounded-md mb-1"
               />
             </>
           ))}
-        </div> 
+        </div>
       </div>
 
+    </div>
     </div>
   );
 };

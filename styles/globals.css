@@ -1,11 +1,12 @@
 @tailwind base;
 
 .scroller {
-  scrollbar-width: thin;
+  scrollbar-width: 4px;
   scrollbar-color: var(--secondary) var(--primary);
 }
 .scroller::-webkit-scrollbar {
   width: 10px;
+  height: 5px;
 }
 .scroller::-webkit-scrollbar-thumb {
   background-color: rgb(163, 150, 150);
