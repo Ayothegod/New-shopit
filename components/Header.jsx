@@ -9,16 +9,20 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div className="bg-white shadow-lg sticky top-0  ">
+    <div
+      className={`bg-white shadow-lg sticky top-0 ${
+        openMenu ? " " : "bg-white"
+      } `}
+    >
       <div className="flex flex-col sm:flex-row sm:justify-between  sm:items-center max-w-[72rem] py-2 px-2 m-auto">
         <div className="flex items-center justify-between mb-2 sm:mb-0 ">
           <div className="flex  items-center gap-2">
-          <div onClick={() => setOpenMenu(!openMenu)}>
-          <MenuIcon className="md:hidden cursor-pointer" />
-          </div>
-          <p className="text-lg md:text-3xl md:py-2  font-ptsans font-bold ">
-            Shop-It
-          </p>
+            <div onClick={() => setOpenMenu(!openMenu)}>
+              <MenuIcon className="md:hidden cursor-pointer" />
+            </div>
+            <p className="text-lg md:text-3xl md:py-2  font-ptsans font-bold ">
+              Shop-It
+            </p>
           </div>
           <div className="flex sm:hidden gap-6 ">
             <div onClick={() => setOpen(!open)}>
@@ -44,15 +48,37 @@ const Header = () => {
           </div>
         </div>
 
-        {openMenu && 
-        <section className="fixed top-0 bottom-0 left-0  w-[60%] bg-[#111] backdrop-blur-lg md:hidden">
-          <div className="">
-          <p>Hello</p>
-          <div onClick={() => setOpenMenu(!openMenu)}>
-          <MenuIcon className="md:hidden cursor-pointer bg-white" />
+        {/* {openMenu && (
+          )} */}
+        <section
+          className={`fixed top-0 bottom-0 left-0 w-[60%] transiti duration-500 ease-in-out bg-[#fff] md:hidden p-2 border-r border-r-neutral-300 ${
+            openMenu ? " translate-x-[-100%]" : "translate-x-[0%]"
+          }`}
+        >
+          <div className=" flex items-center border-b border-b-neutral-200 pb-2">
+            <div onClick={() => setOpenMenu(!openMenu)}>
+              <MenuIcon className="md:hidden cursor-pointer bg-white" />
+            </div>
+            <p className="text-xl font-bold ml-8">Shop-it</p>
           </div>
+          <div className="py-6 flex flex-col justify-between h-full">
+            <div >
+              <h3 className="font-bold text-lg text-orange-600">Products. =&gt;</h3>
+              <ul className="flex flex-col gap-4 mt-2">
+                <li>Shirts</li>
+                <li>Watches</li>
+                <li>Gown</li>
+                <li>Shorts</li>
+                <li>Caps/Hats</li>
+                <li>Shoes - [sneakers, heels]</li>
+              </ul>
+            </div>
+            <div className="mb-10 px-8 ">
+              <button className=" bg-orange-600 mb-2 w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2"><ShoppingCartIcon/>Cart</button>
+              <button className=" bg-black w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2"><PersonIcon/>Sign-in</button>
+            </div>
           </div>
-        </section>}
+        </section>
 
         <div className="flex items-center  gap-x-4 w-full md:w-4/5 ">
           <div className=" w-full flex items-center h-10 gap-2">
