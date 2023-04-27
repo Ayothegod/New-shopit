@@ -52,20 +52,21 @@ const Carousel = () => {
           <Image src={slider} alt="imagine" className="w-max sm:h-60 md:h-80 object-cover object-center"/>
         </div>
 
-      <div style={{}} className=" flex w-auto flex-col sm:hidden">
-        <div className="scroller flex w-auto gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden  ">
-          {slides.map((slide, slideIndex) => (
-            <>
-              <Image
-                key={slideIndex}
-                src={slide.imgUrl}
-                alt={slide.imgAlt}
-                className="w-48 sm:w-48 sm:h-60 rounded-md mb-1"
-              />
-            </>
+
+       <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller my-2 py-2 sm:hidden">
+          {slides.map((product) => (
+            <div>
+              <div className="w-48 h-48 relative rounded-md overflow-hidden">
+                <Image
+                  src={product.imgUrl}
+                  alt={product.imgAlt}
+                  fill
+                  className="w-full h-full absolute object-cover object-center"
+                />
+              </div>
+            </div>
           ))}
         </div>
-      </div>
 
     </div>
     </div>

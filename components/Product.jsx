@@ -67,7 +67,7 @@ const Product = () => {
 
   return (
     <div className="p-1  bg-white mt-1 ">
-      <div className="max-w-[72rem] mx-auto md:flex ">
+      <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="pt-2 px-2">
 
         <p className="font-bold text-xl text-orange-600">New Arrival</p>
