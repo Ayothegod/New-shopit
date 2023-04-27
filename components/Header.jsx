@@ -7,13 +7,19 @@ import { useState } from "react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <div className="bg-white shadow-lg sticky top-0  ">
       <div className="flex flex-col sm:flex-row sm:justify-between  sm:items-center max-w-[72rem] py-2 px-2 m-auto">
         <div className="flex items-center justify-between mb-2 sm:mb-0 ">
+          <div className="flex  items-center gap-2">
+          <div onClick={() => setOpenMenu(!openMenu)}>
+          <MenuIcon className="md:hidden cursor-pointer" />
+          </div>
           <p className="text-lg md:text-3xl md:py-2  font-ptsans font-bold ">
             Shop-It
           </p>
+          </div>
           <div className="flex sm:hidden gap-6 ">
             <div onClick={() => setOpen(!open)}>
               <PersonIcon className=" " />
@@ -37,6 +43,16 @@ const Header = () => {
             </div>
           </div>
         </div>
+
+        {openMenu && 
+        <section className="fixed top-0 bottom-0 left-0  w-[60%] bg-[#111] backdrop-blur-lg md:hidden">
+          <div className="">
+          <p>Hello</p>
+          <div onClick={() => setOpenMenu(!openMenu)}>
+          <MenuIcon className="md:hidden cursor-pointer bg-white" />
+          </div>
+          </div>
+        </section>}
 
         <div className="flex items-center  gap-x-4 w-full md:w-4/5 ">
           <div className=" w-full flex items-center h-10 gap-2">
