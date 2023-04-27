@@ -4,7 +4,7 @@ import Carousel from "./Carousel"
 const Body = () => {
   return (
     <div>
-        {/* <Carousel/> */}
+        <Carousel/>
     </div>
   )
 }

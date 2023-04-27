@@ -17,40 +17,50 @@ const Carousel = () => {
     { imgUrl: imaginate, imgAlt: "imaginate" },
     { imgUrl: ima, imgAlt: "ima" },
   ];
-//   const gotonext = () => {
-//     const islastImage = slides.length - 1 === current;
-//     const newIndex = islastImage ? 0 : current + 1;
-//     setCurrentIndex(newIndex);
-//   };
+
 const gotoSlide = slideIndex => {
     setCurrent(slideIndex)
 }
   return (
-    <div className="p-1 bg-white">
-      <p>Carousel</p>
-      <div style={{}} className=" flex w-full flex-col ">
-        <div className="scroller flex w-full gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden  ">
+    <div className="py-1 px-2 bg-white">
+      <div  className=" flex w-full  ">
+      <section
+          className="hidden md:inline-block"
+        >
+          <div className=" flex items-center border-b border-b-neutral-200 pb-2">
+            <div >
+            </div>
+            <p className="text-xl font-bold ml-8">Shop-it</p>
+          </div>
+          <div className="py-6 flex flex-col justify-between h-full">
+            <div >
+              <h3 className="font-bold text-lg text-orange-600">Products. =&gt;</h3>
+              <ul className="flex flex-col gap-4 mt-2">
+                <li>Shirts</li>
+                <li>Watches</li>
+                <li>Gown</li>
+                <li>Shorts</li>
+                <li>Caps/Hats</li>
+                <li>Shoes - [sneakers, heels]</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div className="scroller flex gap-2 overflow-x-scroll overflow-y-hidden sm:overflow-hidden  ">
           {slides.map((slide,slideIndex) => (
             <>
               <Image
                 key={slideIndex}
                 src={slide.imgUrl}
                 alt={slide.imgAlt}
-                className="w-48 sm:w-full sm:h-60 rounded-md mb-1"
+                className="w-48 md:w-screen md:h-80 rounded-md mb-1"
               />
             </>
           ))}
-        </div>
-        <div className="flex">
-          {slides.map((slide, slideIndex) => (
-            <>
-              <div key={slideIndex}>
-                <button key={slideIndex} className=" cursor-pointer " onClick={() => gotoSlide(slideIndex)}>a</button>
-              </div>
-            </>
-          ))}
-        </div>
+        </div> 
       </div>
+
     </div>
   );
 };

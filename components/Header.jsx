@@ -51,7 +51,7 @@ const Header = () => {
         {/* {openMenu && (
           )} */}
         <section
-          className={`fixed top-0 bottom-0 left-0 w-[60%] transiti duration-500 ease-in-out bg-[#fff] md:hidden p-2 border-r border-r-neutral-300 ${
+          className={`fixed top-0 bottom-0 left-0 w-[60%] transition duration-500 ease-in-out bg-[#fff] md:hidden p-2 border-r border-r-neutral-300 ${
             openMenu ? " translate-x-[-100%]" : "translate-x-[0%]"
           }`}
         >
@@ -62,8 +62,10 @@ const Header = () => {
             <p className="text-xl font-bold ml-8">Shop-it</p>
           </div>
           <div className="py-6 flex flex-col justify-between h-full">
-            <div >
-              <h3 className="font-bold text-lg text-orange-600">Products. =&gt;</h3>
+            <div>
+              <h3 className="font-bold text-lg text-orange-600">
+                Products. =&gt;
+              </h3>
               <ul className="flex flex-col gap-4 mt-2">
                 <li>Shirts</li>
                 <li>Watches</li>
@@ -74,8 +76,14 @@ const Header = () => {
               </ul>
             </div>
             <div className="mb-10 px-8 ">
-              <button className=" bg-orange-600 mb-2 w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2"><ShoppingCartIcon/>Cart</button>
-              <button className=" bg-black w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2"><PersonIcon/>Sign-in</button>
+              <button className=" bg-orange-600 mb-2 w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2">
+                <ShoppingCartIcon />
+                Cart
+              </button>
+              <button className=" bg-black w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2">
+                <PersonIcon />
+                Sign-in
+              </button>
             </div>
           </div>
         </section>
