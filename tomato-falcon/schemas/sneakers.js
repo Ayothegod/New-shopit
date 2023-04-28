@@ -1,6 +1,6 @@
 export default {
-  name: "glasses",
-  title: "glasses",
+  name: "sneakers",
+  title: "sneakers",
   type: "document",
   fields: [
     {
