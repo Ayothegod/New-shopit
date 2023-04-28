@@ -10,7 +10,7 @@ export default function TestSanity({ sneakers }) {
       <h2>Products</h2>
       <main className="flex  justify-between p-8">
         <div className="cursor-pointer flex flex-col gap-10">
-          {sneakers.map((watch) => (
+          {/* {sneakers.map((watch) => (
             <>
               <Link href={`/products/sneakers/${watch.slug.current}`}>
                 <p>{watch.title}</p>
@@ -18,7 +18,7 @@ export default function TestSanity({ sneakers }) {
                 <p>{watch.slug.current}</p>
               </Link>
             </>
-          ))}
+          ))} */}
         </div>
 
       </main>
@@ -33,7 +33,9 @@ const client = createClient({
   useCdn: process.env.SANITY_USECDN,
 });
 export async function getStaticProps() {
-  const sneakers = await client.fetch(`*[_type == "sneakers"]`);
+  const sneakers = await client.fetch(`*[_type == "sneakers"]{
+    _id,title,image,slug,price,_createdAt,offPrice
+  }`);
   // const shorts = await client.fetch(`*[_type == "shorts"]`);
 
   return {
