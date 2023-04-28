@@ -4,8 +4,8 @@ import { client } from "@/utils/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 
-export default function TestSanity({ sneakers ,firstProd}) {
-  console.log( firstProd)
+export default function TestSanity({ sneakers }) {
+  // console.log( firstProd)
 
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
@@ -38,12 +38,11 @@ export async function getStaticProps() {
     _id,title,image,slug,price,_createdAt,offPrice
   }`);
 
-  const firstProd = await client.fetch(`*[_type in ["sneakers","shorts"]]`)
+  
 
   return {
     props: {
       sneakers,
-      firstProd
     },
   };
 }
