@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Body from "@/components/Body";
 import { createClient } from "next-sanity";
 import { client } from "@/utils/client";
+
 import imageUrlBuilder from "@sanity/image-url";
 
 export default function Home({sneakers}) {
@@ -20,6 +21,7 @@ export default function Home({sneakers}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
+
         <Header/>
         <Body/>
         <Footer/>
