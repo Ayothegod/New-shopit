@@ -12,7 +12,7 @@ export default function TestSanity({ sneakers }) {
         <div className="cursor-pointer flex flex-col gap-10">
           {sneakers.map((watch) => (
             <>
-              <Link href={`/product/${watch.slug.current}`}>
+              <Link href={`/products/sneakers/${watch.slug.current}`}>
                 <p>{watch.title}</p>
                 <p>{watch.description}</p>
                 <p>{watch.slug.current}</p>

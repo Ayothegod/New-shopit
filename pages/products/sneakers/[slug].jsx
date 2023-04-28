@@ -1,9 +1,50 @@
-import React from 'react'
+import { useRouter } from "next/router";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "@/utils/client";
+import Image from "next/image";
 
-const [slug] = () => {
+const slug = ({ sneaker }) => {
+
+  function urlFor(source) {
+    return imageUrlBuilder(client).image(source);
+  }
+  console.log(sneaker);
+
   return (
-    <div>[slug]</div>
-  )
+    <article>
+      Hello
+      {/* <h1>{short?.slug?.current}</h1>
+      <h1>{short?.title}</h1>
+      {short?.image && <img src={urlFor(short?.image).url()} alt="hello" />} */}
+    </article>
+  );
+};
+
+export async function getStaticPaths() {
+  const paths = await client.fetch(
+    `*[_type == "post" && defined(slug.current)][].slug.current`
+  );
+
+  return {
+    paths: paths.map((slug) => ({ params: { slug } })),
+    fallback: true,
+  };
 }
 
-export default [slug]
+export async function getStaticProps(context) {
+  const { slug = "" } = context.params;
+  const sneaker = await client.fetch(
+    `
+    *[_type == "sneakers" && slug.current == $slug][0]
+  `,
+    { slug }
+  );
+
+  return {
+    props: {
+      sneaker,
+    },
+  };
+}
+
+export default slug;

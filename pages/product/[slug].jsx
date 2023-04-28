@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-// import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
 import Image from "next/image";
@@ -48,15 +47,4 @@ export async function getStaticProps(context) {
 }
 
 export default slug;
-{
-  /* {short.image && (
-    <div>
-      <img
-        src={urlFor(short.image)
-          .width(50)
-          .url()}
-          
-      />
-    </div>
-  )} */
-}
+
