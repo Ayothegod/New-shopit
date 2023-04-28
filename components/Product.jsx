@@ -70,7 +70,7 @@ const Product = () => {
       <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="flex  justify-between items-center">
 
-        <p className="font-bold text-xl text-orange-600">New Arrival</p>
+        <p className="font-bold text-xl text-neutral-800">New Arrival</p>
         <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
         </div>
 

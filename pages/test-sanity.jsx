@@ -2,8 +2,8 @@ import { createClient } from "next-sanity";
 import Link from "next/link";
 
 export default function TestSanity({ watches, shorts }) {
-  console.log(watches);
-  console.log({ shorts: shorts });
+  // console.log(watches);
+  // console.log({ shorts: shorts });
   return (
     <>
       <h2>Products</h2>

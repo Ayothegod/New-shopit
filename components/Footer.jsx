@@ -24,7 +24,7 @@ const Footer = () => {
                   placeholder="Enter E-mail Address"
                   className="px-1 py-2 md:px-2 md:py-3 rounded-md "
                 />
-                <button className="px-4 py-2 md:px-6 md:py-3  rounded-md bg-orange-600 ">
+                <button className="px-4 py-2 md:px-6 md:py-3 text-black rounded-md bg-white border hover:bg-black hover:text-white  border-black font-semibold">
                   Enter
                 </button>
               </div>
