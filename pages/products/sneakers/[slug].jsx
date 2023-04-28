@@ -13,9 +13,9 @@ const slug = ({ sneaker }) => {
   return (
     <article>
       Hello
-      {/* <h1>{short?.slug?.current}</h1>
-      <h1>{short?.title}</h1>
-      {short?.image && <img src={urlFor(short?.image).url()} alt="hello" />} */}
+      <h1>{sneaker?.slug?.current}</h1>
+      <h1>{sneaker?.title}</h1>
+      {sneaker?.image && <img src={urlFor(sneaker?.image).url()} alt="hello" />}
     </article>
   );
 };

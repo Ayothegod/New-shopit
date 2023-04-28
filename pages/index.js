@@ -5,8 +5,12 @@ import Layout from "@/utils/Layout/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Body from "@/components/Body";
+import { createClient } from "next-sanity";
+import { client } from "@/utils/client";
+import imageUrlBuilder from "@sanity/image-url";
 
-export default function Home() {
+export default function Home({sneakers}) {
+  console.log(sneakers);
   return (
     <>
     <Head>
@@ -16,7 +20,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
-        <p className="capitalize ">hello who are you people</p>
         <Header/>
         <Body/>
         <Footer/>
@@ -24,10 +27,23 @@ export default function Home() {
     </>
   );
 
-
-
-  
 }
+
+export async function getStaticProps() {
+  const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
+    _id,title,image,slug,price,_createdAt,offPrice
+  }`)
+
+  return {
+    props: {
+      sneakers
+    },
+  };
+}
+
+
+
+
 // const { data: session } = useSession()
 // const router = useRouter()
 // console.log(session);
@@ -35,9 +51,9 @@ export default function Home() {
 //   signOut({callbackUrl:"http://localhost:3000/signin"})
 // }
 
-{
-  /* Signed in as {session.user.name}
-  <br />
-  <Image src={session.user.image} className='w-20 h-20' width={20} height={20} alt='github image'/>
-  <button className="p-2 bg-red-600" onClick={signout}>Sign out</button> */
-}
+// {
+//   /* Signed in as {session.user.name}
+//   <br />
+//   <Image src={session.user.image} className='w-20 h-20' width={20} height={20} alt='github image'/>
+//   <button className="p-2 bg-red-600" onClick={signout}>Sign out</button> */
+// }
