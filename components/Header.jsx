@@ -3,6 +3,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import HelpIcon from "@mui/icons-material/Help";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import CloseIcon from '@mui/icons-material/Close';
 import { useState } from "react";
 
 const Header = () => {
@@ -115,15 +116,16 @@ const Header = () => {
               <h3 className="font-bold text-xl text-black">
                 Products
               </h3>
-              <ul className="flex flex-col gap-4 mt-2">
+              <ul className="flex flex-col gap-4 mt-2 font-medium text-lg">
                 <li>Shirts</li>
-                <li>Watches</li>
-                <li>Gown</li>
                 <li>Shorts</li>
-                <li>Caps/Hats</li>
+                <li>Gown</li>
+                <li>Watches</li>
+                <li>Sunglasses</li>
                 <li>Shoes - [sneakers, heels]</li>
               </ul>
             </div>
+
             <div className="mb-10 ">
               <button className="bg-white border-2 border-neutral-800 mb-2 w-full flex py-2 px-4 rounded-md text-black font-semibold gap-2 duration-200 ease-in hover:text-white hover:bg-black">
                 <ShoppingCartIcon />
@@ -134,6 +136,7 @@ const Header = () => {
                 Sign-in
               </button>
             </div>
+
           </div>
 
         </section>
