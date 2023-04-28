@@ -33,7 +33,7 @@ const client = createClient({
   useCdn: process.env.SANITY_USECDN,
 });
 export async function getStaticProps() {
-  const sneakers = await client.fetch(`*[_type == "sneakers"]{
+  const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
     _id,title,image,slug,price,_createdAt,offPrice
   }`);
   // const shorts = await client.fetch(`*[_type == "shorts"]`);
