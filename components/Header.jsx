@@ -125,7 +125,7 @@ const Header = () => {
               </ul>
             </div>
             <div className="mb-10 ">
-              <button className=" bg-orange-600 mb-2 w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2">
+              <button className="bg-white border-2 border-neutral-800 mb-2 w-full flex py-2 px-4 rounded-md text-black font-semibold gap-2 duration-200 ease-in hover:text-white hover:bg-black">
                 <ShoppingCartIcon />
                 Cart
               </button>
