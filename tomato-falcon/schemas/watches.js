@@ -29,6 +29,12 @@ export default {
       description: "can add any number of categories",
     },
     {
+      name: "position",
+      type: "string",
+      title: "position",
+      description: "since i cant query array yet, lets use its position",
+    },
+    {
       name: "rating",
       type: "number",
       title: "rating",

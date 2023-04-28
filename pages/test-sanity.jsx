@@ -1,4 +1,3 @@
-import { createClient } from "next-sanity";
 import Link from "next/link";
 import { client } from "@/utils/client";
 import imageUrlBuilder from "@sanity/image-url";

@@ -9,11 +9,9 @@ import { createClient } from "next-sanity";
 import { client } from "@/utils/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { useStore } from "@/utils/store";
-import { data } from "autoprefixer";
 
-export default function Home({sneakers,books}) {
-  console.log({sneakers});
-console.log({books});
+export default function Home({sneakers,firstProduct}) {
+console.log({firstProduct});
 
   return (
     <>
@@ -24,9 +22,9 @@ console.log({books});
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
-        <Header/>
+        {/* <Header/> */}
         {/* <Body sneakers={sneakers}/> */}
-        <Footer/>
+        {/* <Footer/> */}
       </main>
     </>
   );
@@ -38,13 +36,13 @@ export async function getStaticProps() {
   const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
     _id,title,image
   } `)
-  const books = await client.fetch(`*[_type in ["shorts", "sneakers"] && position == "first" ]{
+  const firstProduct = await client.fetch(`*[_type in ["shorts", "sneakers"] && position == "first" ]{
     _id,title,
   } `)
 
   return {
     props: {
-      sneakers,books
+      sneakers,firstProduct
     },
   };
 }
