@@ -35,6 +35,18 @@ export default {
       description: "numbers only, 1 - 5",
     },
     {
+      name: "price",
+      type: "number",
+      title: "price",
+      description: "numbers only, price of products",
+    },
+    {
+      name: "offPrice",
+      type: "number",
+      title: "off price",
+      description: "numbers only, percent off original price",
+    },
+    {
       type: "image",
       name: "image",
       title: "image",
