@@ -18,8 +18,8 @@ const Header = () => {
             <div onClick={() => setOpenMenu(!openMenu)}>
               <MenuIcon className="md:hidden cursor-pointer" />
             </div>
-            <p className="text-lg md:text-3xl md:py-2  font-ptsans font-bold ">
-              Shop-It
+            <p className="text-lg md:text-2xl md:py-2 font-russo font-extrabold ">
+              Shop-It 
             </p>
           </div>
           <div className="flex sm:hidden gap-6 ">

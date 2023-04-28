@@ -14,7 +14,8 @@ module.exports = {
         "footer": "#535357",
       },
       fontFamily: {
-        'ptsans': ['PT Sans', "sans-serif"]
+        'roboto': ['Roboto', "sans-serif"],
+        "russo": ['Russo One', "sans-serif"],
       },
       spacing: {
         xl: "4rem",
