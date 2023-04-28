@@ -3,6 +3,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import HelpIcon from "@mui/icons-material/Help";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from "react";
 
@@ -58,9 +59,9 @@ const Header = () => {
             <input
               type="text"
               placeholder="Products and categories"
-              className="border border-neutral-300 rounded-lg p-1 sm:p-2 w-full "
+              className="border border-neutral-300 rounded-md p-1 sm:p-2 w-full "
             />
-            <button className="hidden sm:flex bg-neutral-700 text-white font-medium uppercase rounded-sm p-2">
+            <button className="hidden sm:flex bg-neutral-700 text-white font-medium uppercase rounded-md p-2">
               Search
             </button>
           </div>
@@ -105,12 +106,12 @@ const Header = () => {
           {/* mobile menu header */}
           <div className=" flex items-center border-b border-b-neutral-200 pb-2">
             <div onClick={() => setOpenMenu(!openMenu)}>
-              <MenuIcon className="md:hidden cursor-pointer bg-white" />
+              <CloseIcon className="ml-2 cursor-pointer"/>
             </div>
             <p className="text-xl font-russo font-bold ml-8">Shop-it</p>
           </div>
 
-
+          {/* mobile menu content */}
           <div className="py-6 px-2 sm:px-8 flex flex-col justify-between h-full font-roboto">
             <div>
               <h3 className="font-bold text-xl text-black">
@@ -122,10 +123,11 @@ const Header = () => {
                 <li>Gown</li>
                 <li>Watches</li>
                 <li>Sunglasses</li>
-                <li>Shoes - [sneakers, heels]</li>
+                <li className="flex items-center gap-2">Shoes <ArrowForwardIcon/> [sneakers, heels]</li>
               </ul>
             </div>
 
+            {/* mobile menu sign and cart button */}
             <div className="mb-10 ">
               <button className="bg-white border-2 border-neutral-800 mb-2 w-full flex py-2 px-4 rounded-md text-black font-semibold gap-2 duration-200 ease-in hover:text-white hover:bg-black">
                 <ShoppingCartIcon />
@@ -141,8 +143,7 @@ const Header = () => {
 
         </section>
 
-        
-
+      
       </div>
 
     </div>
