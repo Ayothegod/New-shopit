@@ -16,6 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
+        <p className="capitalize ">hello who are you people</p>
         <Header/>
         <Body/>
         <Footer/>
