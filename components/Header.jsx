@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(true);
 
 
   return (
