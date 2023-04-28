@@ -7,89 +7,42 @@ import ima from "utils/asset/20220525_230857.jpg";
 import Image from "next/image";
 import { Slideshow } from "@mui/icons-material";
 import ImageBox from "./ImageBox";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "@/utils/client";
+import Link from "next/link";
 
-const Product = () => {
-  const products = [
-    {
-      id: 1,
-      title: "first product",
-      description: "first product description",
-      price: 21.45,
-      imgUrl: slider,
-      imgAlt: "slider",
-    },
-    {
-      id: 2,
-      title: "second product",
-      description: "second product description",
-      price: 73278.3,
-      imgUrl: imager,
-      imgAlt: "slider",
-    },
-    {
-      id: 3,
-      title: "third product",
-      description: "third product description",
-      price: 130.5,
-      imgUrl: imaginate,
-      imgAlt: "slider",
-      imgAlt: "imaginate",
-    },
-    {
-      id: 4,
-      title: "fourth product",
-      description: "fourth product description",
-      price: 34.0,
-      imgUrl: ima,
-      imgAlt: "slider",
-      imgAlt: "ima",
-    },
-    {
-      id: 5,
-      title: "fifth product",
-      description: "fifth product description",
-      price: 34.0,
-      imgUrl: imagine,
-      imgAlt: "slider",
-      imgAlt: "ima",
-    },
-    {
-      id: 6,
-      title: "sixth product",
-      description: "sixth product description",
-      price: 34.0,
-      imgUrl: imager,
-      imgAlt: "slider",
-      imgAlt: "ima",
-    },
-  ];
+const Product = ({ sneakers }) => {
+  function urlFor(source) {
+    return imageUrlBuilder(client).image(source);
+  }
+  // console.log(sneakers);
   // console.log(products);
 
   return (
     <div className="p-1  bg-white mt-1 ">
       <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="flex  justify-between items-center">
-
-        <p className="font-bold text-xl text-neutral-800">New Arrival</p>
-        <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
+          <p className="font-bold text-xl text-neutral-800">New Arrival</p>
+          <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
         </div>
 
         <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller  py-2 ">
-          {products.map((product) => (
-            <div>
-              <div className="w-60 h-60 relative rounded-md overflow-hidden">
-                <Image
-                  src={product.imgUrl}
-                  alt={product.imgAlt}
-                  fill
-                  className="w-full h-full absolute object-cover object-center"
-                />
-              </div>
+          {sneakers.map((sneaker) => (
+            <Link href={`/products/sneakers/${sneaker.slug.current}`}>
               <div>
-                <p>{product.title}</p>
-                <p>{product.description}</p>
+                <div className="w-60 h-60 relative rounded-md overflow-hidden">
+                  <Image
+                    src={urlFor(sneaker.image).url()}
+                    alt={sneaker.title}
+                    fill
+                    className="w-full h-full absolute object-cover object-center"
+                  />
+                </div>
+                <div>
+                  <p className="font-medium text-neutral-700 text-lg">{sneaker.title}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
