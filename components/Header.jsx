@@ -59,7 +59,7 @@ const Header = () => {
               placeholder="Products and categories"
               className="border border-neutral-300 rounded-md p-1 sm:p-2 w-full "
             />
-            <button className="hidden sm:flex bg-neutral-700 text-white font-medium uppercase rounded-md p-2">
+            <button className="hidden sm:flex bg-orange-600 text-white font-medium uppercase rounded-md p-2">
               Search
             </button>
           </div>
@@ -68,7 +68,7 @@ const Header = () => {
               className="flex items-center gap-x-1 relative cursor-pointer"
               onClick={() => setOpen(!open)}
             >
-              <PersonIcon className="" />
+              <BsFillPersonFill className="" />
               <p className="">Account</p>
               <FaCartArrowDown />
 
@@ -88,7 +88,7 @@ const Header = () => {
               )}
             </div>
             <div className="flex items-center gap-x-1 cursor-pointer">
-              <ShoppingCartIcon className="" />
+              <FaCartPlus className="" />
               <p className="">Cart</p>
             </div>
           </div>
@@ -112,7 +112,7 @@ const Header = () => {
           {/* mobile menu content */}
           <div className="py-6 px-2 sm:px-8 flex flex-col justify-between h-full font-roboto">
             <div>
-              <h3 className="font-bold text-xl text-black">
+              <h3 className="font-bold text-xl text-orange-600">
                 Products
               </h3>
               <ul className="flex flex-col gap-4 mt-2 font-medium text-lg">
@@ -127,12 +127,12 @@ const Header = () => {
 
             {/* mobile menu sign and cart button */}
             <div className="mb-10 ">
-              <button className="bg-white border-2 border-neutral-800 mb-2 w-full flex py-2 px-4 rounded-md text-black font-semibold gap-2 duration-200 ease-in hover:text-white hover:bg-black">
-                <ShoppingCartIcon />
+              <button className="bg-orange-600  mb-2 w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2 duration-200 ease-in hover:text-white hover:bg-black">
+                <FaCartPlus />
                 Cart
               </button>
               <button className=" bg-black w-full flex py-2 px-4 rounded-md text-white font-semibold gap-2">
-                <PersonIcon />
+                <BsFillPersonFill />
                 Sign-in
               </button>
             </div>

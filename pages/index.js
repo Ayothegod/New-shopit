@@ -21,7 +21,7 @@ console.log({firstProduct});
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
-        {/* <Header/> */}
+        <Header/>
         {/* <Body sneakers={sneakers}/> */}
         {/* <Footer/> */}
       </main>
