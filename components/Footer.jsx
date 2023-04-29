@@ -1,7 +1,5 @@
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import {AiFillTwitterCircle,AiFillGithub,AiOutlineLink} from "react-icons/ai";
+import {BsLinkedin} from "react-icons/bs";
 import Link from "next/link";
 
 const Footer = () => {
@@ -82,16 +80,16 @@ const Footer = () => {
             <p className="font-medium text-md">JOIN US ON</p>
             <div className="flex gap-x-4">
               <Link href="https://twitter.com/aiiomide">
-                <TwitterIcon className="text-blue-600 transition duration-100 ease-in hover:-translate-y-2" />
+                <AiFillTwitterCircle className="text-blue-600 transition duration-100 ease-in hover:-translate-y-2" />
               </Link>
               <Link href="https://linkedin.com/in/aiiomide">
-                <LinkedInIcon className="text-blue-400 transition duration-100 ease-in hover:-translate-y-2" />
+                <BsLinkedin className="text-blue-400 transition duration-100 ease-in hover:-translate-y-2" />
               </Link>
               <Link href="https://github.com/ayothegod">
-                <InstagramIcon className="text-red-600 transition duration-100 ease-in hover:-translate-y-2" />
+                <AiFillGithub className="text-red-600 transition duration-100 ease-in hover:-translate-y-2" />
               </Link>
               <Link href="https://twitter.com/aiiomide">
-                <FacebookIcon className="text-blue-600 transition duration-100 ease-in hover:-translate-y-2" />
+                <AiOutlineLink className="text-blue-600 transition duration-100 ease-in hover:-translate-y-2" />
               </Link>
             </div>
           </div>
