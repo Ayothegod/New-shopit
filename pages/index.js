@@ -10,7 +10,9 @@ import imageUrlBuilder from "@sanity/image-url";
 import { useStore } from "@/utils/store";
 
 export default function Home({sneakers,firstProduct}) {
-console.log({firstProduct});
+
+// console.log({firstProduct});
+// console.log({sneakers});
 
   return (
     <>
@@ -22,8 +24,8 @@ console.log({firstProduct});
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-        {/* <Body sneakers={sneakers}/> */}
-        {/* <Footer/> */}
+        <Body sneakers={sneakers}/>
+        <Footer/>
       </main>
     </>
   );
@@ -33,10 +35,10 @@ console.log({firstProduct});
 export async function getStaticProps() {
 
   const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
-    _id,title,image
+    _id,title,image,slug,price,_createdAt,offPrice
   } `)
-  const firstProduct = await client.fetch(`*[_type in ["shorts", "sneakers"] && position == "first" ]{
-    _id,title,
+  const firstProduct = await client.fetch(`*[_type in ["shorts", "sneakers","glasses"] && position == "first" ]{
+    _id,title,image,slug,price,_createdAt,offPrice
   } `)
 
   return {
