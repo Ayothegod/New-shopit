@@ -1,10 +1,8 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import PersonIcon from "@mui/icons-material/Person";
-import HelpIcon from "@mui/icons-material/Help";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import CloseIcon from '@mui/icons-material/Close';
+import {GiHamburgerMenu} from "react-icons/gi"
+import {BsFillPersonFill,BiHelpCircle} from "react-icons/bs";
+import {FaCartArrowDown,FaCartPlus } from "react-icons/fa";
+import {AiOutlineDown} from "react-icons/ai";
+import {MdOutlineArrowForward, MdOutlineClose} from 'react-icons/md';
 import { useState } from "react";
 
 const Header = () => {
@@ -21,7 +19,7 @@ const Header = () => {
         <div className="flex items-center justify-between mb-2 sm:mb-0 ">
           <div className="flex  items-center gap-2">
             <div onClick={() => setOpenMenu(!openMenu)}>
-              <MenuIcon className="md:hidden cursor-pointer" />
+              <GiHamburgerMenu className="md:hidden cursor-pointer" />
             </div>
             <p className="text-lg md:text-2xl md:py-2 font-russo font-extrabold ">
               Shop-It 
@@ -31,7 +29,7 @@ const Header = () => {
           {/* mobile icons on header */}
           <div className="flex sm:hidden gap-6 ">
             <div onClick={() => setOpen(!open)}>
-              <PersonIcon className=" " />
+              <BsFillPersonFill className=" " />
               {open && (
                 <div className="absolute top-24 right-4 py-4 px-6 rounded-md bg-white shadow-lg flex flex-col gap-y-1 w-48 ">
                   <h1 className="text-[#999]">
@@ -48,7 +46,7 @@ const Header = () => {
               )}
             </div>
             <div>
-              <ShoppingCartIcon className="" />
+              <FaCartPlus className="" />
             </div>
           </div>
         </div>
@@ -72,18 +70,18 @@ const Header = () => {
             >
               <PersonIcon className="" />
               <p className="">Account</p>
-              <KeyboardArrowDownIcon />
+              <FaCartArrowDown />
 
               {open && (
                 <div className="absolute top-14 py-4 px-6 rounded-md bg-white shadow-lg flex flex-col gap-y-1 w-48 ">
                   <h1 className="text-[#999]">
                     Hi{" "}
-                    <span className="text-orange-600 font-semibold text-md ">
+                    <span className="text-neutral-800  font-semibold text-md ">
                       user
                     </span>
                   </h1>
                   <p className="text-xs text-[#999]">not signed in? </p>
-                  <button className="text-white bg-orange-600 py-1 px-2 rounded-md border-none">
+                  <button className="text-white bg-neutral-800 py-1 px-2 rounded-md border-none">
                     sign in
                   </button>
                 </div>
@@ -106,7 +104,7 @@ const Header = () => {
           {/* mobile menu header */}
           <div className=" flex items-center border-b border-b-neutral-200 pb-2">
             <div onClick={() => setOpenMenu(!openMenu)}>
-              <CloseIcon className="ml-2 cursor-pointer"/>
+              <MdOutlineClose className="ml-2 cursor-pointer"/>
             </div>
             <p className="text-xl font-russo font-bold ml-8">Shop-it</p>
           </div>
@@ -123,7 +121,7 @@ const Header = () => {
                 <li>Gown</li>
                 <li>Watches</li>
                 <li>Sunglasses</li>
-                <li className="flex items-center gap-2">Shoes <ArrowForwardIcon/> [sneakers, heels]</li>
+                <li className="flex items-center gap-2">Shoes <MdOutlineArrowForward/> [sneakers, heels]</li>
               </ul>
             </div>
 
