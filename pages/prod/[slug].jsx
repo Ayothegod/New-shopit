@@ -4,7 +4,7 @@ import { client } from "@/utils/client";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import loader from "@/utils/asset/icons8-loading-50.png"
+import loader from "@/utils/asset/icons8-loading-50.png";
 import Head from "next/head";
 
 const slug = ({ sneaker, recommendProduct }) => {
@@ -25,52 +25,57 @@ const slug = ({ sneaker, recommendProduct }) => {
       <div>
         <Header />
 
-        <section>
-          Hello
-          {!sneaker && 
-          <div className="grid place-items-center">
-            <Image src={loader} alt="loader" className="animate-spin "/>
-          <p>Product is loading</p>
-          </div>
-          }
+        <section className="p-1  bg-white">
+          <div className="max-w-[72rem] mx-auto md:flex ">
 
-          {sneaker?.image && (
-            <div className="w-full h-48 sm:w-60 sm:h-60 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
-              <Image
-                src={urlFor(sneaker.image).url()}
-                alt={sneaker.title}
-                fill
-                className="w-full h-full absolute object-cover object-center"
-                />
-            </div>
-          )}
-          <h1>{sneaker?.title}</h1>
-          <h1>{sneaker?.description}</h1>
-          <h1>{sneaker?.price}</h1>
-        </section>
+            <section className="">
+              {!sneaker && (
+                <div className="grid place-items-center">
+                  <Image src={loader} alt="loader" className="animate-spin " />
+                  <p>Product is loading</p>
+                </div>
+              )}
 
-        <section>
-          <div>
-          <p>Recommended</p>
-          <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
-            {recommendProduct.map((product) => (
+              {sneaker?.image && (
+                <div className="w-full h-48 sm:w-60 sm:h-60 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
+                  <Image
+                    src={urlFor(sneaker.image).url()}
+                    alt={sneaker.title}
+                    fill
+                    className="w-full h-full absolute object-cover object-center"
+                  />
+                </div>
+              )}
+              <h1>{sneaker?.title}</h1>
+              <h1>{sneaker?.description}</h1>
+              <h1>{sneaker?.price}</h1>
+            </section>
+
+            <section>
               <div>
-                <Link href={`/prod/${product.slug.current}`}>
-                  <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
-                    <Image
-                      src={urlFor(product.image).url()}
-                      alt={product.imgAlt}
-                      fill
-                      className="w-full h-full absolute object-cover object-center"
-                    />
-                  </div>
-                </Link>
+                <p>Recommended</p>
+                <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
+                  {recommendProduct.map((product) => (
+                    <div>
+                      <Link href={`/prod/${product.slug.current}`}>
+                        <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
+                          <Image
+                            src={urlFor(product.image).url()}
+                            alt={product.imgAlt}
+                            fill
+                            className="w-full h-full absolute object-cover object-center"
+                          />
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        </section>
 
+              {/* </div> */}
+            </section>
+          </div>
+        </section>
 
         <Footer />
       </div>

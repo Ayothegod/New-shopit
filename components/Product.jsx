@@ -1,9 +1,3 @@
-import slider from "utils/asset/slider.png";
-import sliderfs from "utils/asset/slider_FS.png";
-import imager from "utils/asset/20220425_205815.jpg";
-import imagine from "utils/asset/20220506_041426.jpg";
-import imaginate from "utils/asset/20220519_195313.jpg";
-import ima from "utils/asset/20220525_230857.jpg";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
