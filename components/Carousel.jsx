@@ -36,12 +36,6 @@ const Carousel = ({firstProduct}) => {
           </div>
         </section>
 
-        {/* <div className="hidden mx-1 my-0 sm:inline-block">
-          <Image src={urlFor(firstProduct[0].image).url()} alt="imagine" className="sm:h-48 md:h-80 object-cover object-center w-screen" fill/>
-          <Link href={`/prod/${product.slug.current}`}>
-          </Link>
-        </div> */}
-
         <div>
 
         
