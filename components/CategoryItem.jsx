@@ -4,7 +4,7 @@ import { client } from "@/utils/client";
 import Link from "next/link";
 
 
-export const CategoryItem = ({category}) => {
+const CategoryItem = ({category}) => {
         function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
@@ -12,10 +12,9 @@ export const CategoryItem = ({category}) => {
   return (
     <div>
         {
-            sneakers && 
+            category && 
             <div>
-              {/* <p>{sneakers[0]?.title}</p> */}
-              <Link href="/sneakers">
+              {/* <p>{category[0]?.title}</p> */}
                   <div className="w-auto h-20 md:h-24 relative rounded-md overflow-hidden border border-neutral-300">
                     <Image
                       src={urlFor(category[8]?.image).url()}
@@ -26,9 +25,10 @@ export const CategoryItem = ({category}) => {
                     <p className="absolute inset-0 grid place-items-center uppercase font-bold backdrop-brightness-50 text-white  ">{category[8]?._type}</p>
                   </div>
 
-                </Link>
             </div>
           }
     </div>
   )
 }
+
+export default CategoryItem
