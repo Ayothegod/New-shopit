@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import loader from "@/utils/asset/icons8-loading-50.png";
 import Head from "next/head";
+import Link from "next/link";
 
 const slug = ({ sneaker, recommendProduct }) => {
   function urlFor(source) {
@@ -22,17 +23,17 @@ const slug = ({ sneaker, recommendProduct }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className="bg-[#ddd6d6] min-h-screen">
         <Header />
 
-        <section className="p-1  bg-white">
+        <section className="p-2 my-1 bg-white">
           <div className="max-w-[72rem] mx-auto md:flex ">
 
             <section className="">
               {!sneaker && (
                 <div className="grid place-items-center">
                   <Image src={loader} alt="loader" className="animate-spin " />
-                  <p>Product is loading</p>
+                  <p>Product is loading now</p>
                 </div>
               )}
 
@@ -51,17 +52,18 @@ const slug = ({ sneaker, recommendProduct }) => {
               <h1>{sneaker?.price}</h1>
             </section>
 
-            {/* <section>
+            <section>
               <div>
                 <p>Recommended</p>
                 <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
-                  {recommendProduct.map((product) => (
+                  {recommendProduct && 
+                  recommendProduct.map((product) => (
                     <div>
-                      <Link href={`/prod/${product.slug.current}`}>
+                      <Link href={`/prod/${product?.slug.current}`}>
                         <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                           <Image
-                            src={urlFor(product.image).url()}
-                            alt={product.imgAlt}
+                            src={urlFor(product?.image).url()}
+                            alt={product?.imgAlt}
                             fill
                             className="w-full h-full absolute object-cover object-center"
                           />
@@ -72,8 +74,7 @@ const slug = ({ sneaker, recommendProduct }) => {
                 </div>
               </div>
 
-              {/* </div> */}
-            </section> */}
+            </section>
 
           </div>
         </section>
