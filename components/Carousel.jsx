@@ -31,8 +31,8 @@ const Carousel = ({ firstProduct }) => {
         </section>
 
         <div>
-          <p>New Arrival</p>
-          <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
+          <p className="text-orange-600 font-semibold text-xl">New Arrival</p>
+          <div className="flex gap-2 py-1 overflow-scroll overflow-y-hidden scroller">
             {firstProduct.map((product) => (
               <div>
                 <Link href={`/prod/${product.slug.current}`}>
@@ -49,7 +49,7 @@ const Carousel = ({ firstProduct }) => {
             ))}
           </div>
         </div>
-        
+
       </div>
     </div>
   );

@@ -14,8 +14,10 @@ const Product = ({ sneakers }) => {
     <div className="p-1  bg-white mt-1 ">
       <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="flex  justify-between items-center">
-          <p className="font-bold text-xl text-neutral-800">New Arrival</p>
+          <p className="font-bold text-xl text-orange-600">Shoes</p>
+          <Link href="/sneakers">
           <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
+          </Link>
         </div>
 
         <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller  py-2 ">
