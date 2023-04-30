@@ -33,7 +33,7 @@ const slug = ({ sneaker, recommendProduct }) => {
               {!sneaker && (
                 <div className="grid place-items-center">
                   <Image src={loader} alt="loader" className="animate-spin " />
-                  <p>Product is loading now</p>
+                  <p>Product is loading</p>
                 </div>
               )}
 
