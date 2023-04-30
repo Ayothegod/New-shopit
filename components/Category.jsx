@@ -25,7 +25,7 @@ const Category = ({sneakers}) => {
                       fill
                       className="w-full h-full absolute object-cover object-center"
                     />
-                    <p>{sneakers[8]?._type}</p>
+                    <p className="absolute top-2">{sneakers[8]?._type}</p>
                   </div>
 
                 </Link>

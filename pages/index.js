@@ -32,7 +32,7 @@ export default function Home({sneakers,firstProduct}) {
 export async function getStaticProps() {
 
   const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
-    _id,title,image,slug,price,_createdAt,offPrice
+    _id,title,image,slug,price,_createdAt,offPrice,_type
   } `)
   const firstProduct = await client.fetch(`*[_type in ["shorts", "sneakers","glasses","watches"] && position == "first" ]{
     image,slug
