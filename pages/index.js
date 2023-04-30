@@ -9,7 +9,7 @@ import { client } from "@/utils/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { useStore } from "@/utils/store";
 
-export default function Home({sneakers,firstProduct}) {
+export default function Home({sneakers,firstProduct,shorts,watches,glasses}) {
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function Home({sneakers,firstProduct}) {
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-        <Body sneakers={sneakers} firstProduct={firstProduct}/>
+        <Body sneakers={sneakers} firstProduct={firstProduct} watches={watches} glasses={glasses} shorts={shorts} />
         <Footer/>
       </main>
     </>
