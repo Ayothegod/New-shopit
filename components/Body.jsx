@@ -7,7 +7,7 @@ const Body = ({sneakers,firstProduct}) => {
   return (
     <div>
       <Carousel firstProduct={firstProduct}/>
-      <Category />
+      <Category sneakers={sneakers} />
       <Product sneakers={sneakers} />
       <Filter/>
     </div>

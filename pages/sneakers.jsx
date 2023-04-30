@@ -30,9 +30,7 @@ console.log({sneakers});
 
 export async function getStaticProps() {
 
-  const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
-    _id,title,image,slug,price,_createdAt,offPrice
-  } `)
+  const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc) `)
   return {
     props: {
       sneakers,
