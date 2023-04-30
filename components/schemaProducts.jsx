@@ -9,8 +9,6 @@ const SchemaProducts = ({ sneakers }) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
-  // console.log(sneakers);
-  // console.log(products);
 
   return (
     <div className="py-4 px-2  bg-white my-4 ">
