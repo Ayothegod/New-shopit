@@ -17,12 +17,12 @@ const SchemaProducts = ({ sneakers }) => {
           <p className="font-bold text-xl text-orange-600">Shoes</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-2  md:grid-cols-3">
           {sneakers.map((sneaker) => (
             <>
             <Link href={`/prod/${sneaker.slug.current}`}>
               <div>
-                <div className="w-60 h-60 relative rounded-md overflow-hidden">
+                <div className="w-40 h-48 sm:w-72 sm:h-60 relative rounded-md overflow-hidden">
                   <Image
                     src={urlFor(sneaker.image).url()}
                     alt={sneaker.title}
