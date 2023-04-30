@@ -2,6 +2,8 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
 import Link from "next/link";
+import {FaCartPlus } from "react-icons/fa";
+
 
 const SchemaProducts = ({ sneakers }) => {
   function urlFor(source) {
@@ -39,7 +41,7 @@ const SchemaProducts = ({ sneakers }) => {
                 </div>
               </div>
             </Link>
-            <button className="rounded-md mt-1 bg-orange-600 py-2 px-2 w-full md:w-2/3 text-white font-medium text-sm">Add to Cart</button>
+            <button className="rounded-md mt-1 bg-orange-600 py-2 px-2 w-full md:w-2/3 text-white font-medium text-sm flex items-center gap-6"><FaCartPlus className="w-5 h-5"/>Add to Cart</button>
             </div>
 
           ))}
