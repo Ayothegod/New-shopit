@@ -11,12 +11,16 @@ const slug = ({ sneaker }) => {
   console.log(sneaker);
 
   return (
+
+    <div>
+
     <article>
       Hello
       <h1>{sneaker?.slug?.current}</h1>
       <h1>{sneaker?.title}</h1>
       {sneaker?.image && <img src={urlFor(sneaker?.image).url()} alt="hello" />}
     </article>
+    </div>
   );
 };
 
@@ -35,11 +39,12 @@ export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const sneaker = await client.fetch(
     `
-    *[_type == "sneakers" && slug.current == $slug][0]
+    *[_type in ["shorts", "sneakers","glasses","watches"] && slug.current == $slug][0]
     `,
     { slug }
     );
-
+    // *[_type == "sneakers" && slug.current == $slug][0]
+    
   return {
     props: {
       sneaker,

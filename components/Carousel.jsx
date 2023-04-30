@@ -1,13 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
-import slider from "utils/asset/slider.png";
-import sliderfs from "utils/asset/slider_FS.png";
-import imager from "utils/asset/20220425_205815.jpg";
-import imagine from "utils/asset/20220506_041426.jpg";
-import imaginate from "utils/asset/20220519_195313.jpg";
-import ima from "utils/asset/20220525_230857.jpg";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
+import Link from "next/link";
 
 
 const Carousel = ({firstProduct}) => {
@@ -43,6 +38,8 @@ const Carousel = ({firstProduct}) => {
 
         {/* <div className="hidden mx-1 my-0 sm:inline-block">
           <Image src={urlFor(firstProduct[0].image).url()} alt="imagine" className="sm:h-48 md:h-80 object-cover object-center w-screen" fill/>
+          <Link href={`/prod/${product.slug.current}`}>
+          </Link>
         </div> */}
 
         <div>
@@ -52,14 +49,16 @@ const Carousel = ({firstProduct}) => {
        <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
           {firstProduct.map((product) => (
             <div>
+              <Link href={`/prod/${product.slug.current}`}>
               <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                 <Image
                   src={urlFor(product.image).url()}
                   alt={product.imgAlt}
                   fill
                   className="w-full h-full absolute object-cover object-center"
-                />
+                  />
               </div>
+                  </Link>
             </div>
           ))}
         </div>
