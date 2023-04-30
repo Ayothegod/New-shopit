@@ -20,7 +20,7 @@ console.log({sneakers});
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-            Hello sneakers
+            <SchemaProducts sneakers={sneakers}/>
         <Footer/>
       </main>
     </>

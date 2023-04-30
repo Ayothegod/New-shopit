@@ -17,7 +17,7 @@ const SchemaProducts = ({ sneakers }) => {
           <p className="font-bold text-xl text-orange-600">Shoes</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-2 md:grid-cols-3">
           {sneakers.map((sneaker) => (
             <>
             <Link href={`/prod/${sneaker.slug.current}`}>
