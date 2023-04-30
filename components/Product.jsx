@@ -14,7 +14,7 @@ const Product = ({ sneakers }) => {
     <div className="p-1  bg-white mt-1 ">
       <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="flex  justify-between items-center">
-          <p className="font-bold text-xl text-orange-600">Shoes</p>
+          <p className="font-bold text-xl text-orange-600">Sneakers</p>
           <Link href="/sneakers">
           <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
           </Link>

@@ -2,8 +2,10 @@ import Head from "next/head";
 // import { useSession, signOut, getSession } from "next-auth/react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SchemaProducts from "@/components/SchemaProducts";
 import Body from "@/components/Body";
 import { client } from "@/utils/client";
+
 
 export default function Sneakers({sneakers}) {
 
@@ -18,7 +20,7 @@ console.log({sneakers});
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-            Hello
+            Hello sneakers
         <Footer/>
       </main>
     </>
