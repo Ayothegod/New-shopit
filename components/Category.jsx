@@ -13,24 +13,7 @@ const Category = ({sneakers}) => {
     <div className="bg-white mt-1">
       <div className="max-w-[72rem] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-1 p-2 text-black">
-          {
-            sneakers && 
-            <div>
-              {/* <p>{sneakers[0]?.title}</p> */}
-              <Link href="/sneakers">
-                  <div className="w-auto h-20 md:h-24 relative rounded-md overflow-hidden border border-neutral-300">
-                    <Image
-                      src={urlFor(sneakers[8]?.image).url()}
-                      alt={sneakers[8]?.title}
-                      fill
-                      className="w-full h-full absolute object-cover object-center"
-                    />
-                    <p className="absolute inset-0 grid place-items-center uppercase font-bold backdrop-brightness-50 text-white  ">{sneakers[8]?._type}</p>
-                  </div>
-
-                </Link>
-            </div>
-          }
+          <Category Category={sneakers}/>
           <div className="w-auto h-20 md:h-24 bg-[#ddd6d6] rounded-md grid place-items-center">Shirts</div>
           <div className="w-auto h-20 md:h-24 bg-[#ddd6d6] rounded-md grid place-items-center">Shirts</div>
           <div className="w-auto h-20 md:h-24 bg-[#ddd6d6] rounded-md grid place-items-center">Shirts</div>
