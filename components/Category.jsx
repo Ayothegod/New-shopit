@@ -16,19 +16,19 @@ const Category = ({sneakers}) => {
           {
             sneakers && 
             <div>
-              <p>{sneakers[0]?.title}</p>
-              {/* <Link href="sneakers">
-                  <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
+              {/* <p>{sneakers[0]?.title}</p> */}
+              <Link href="/sneakers">
+                  <div className="w-auto h-20 md:h-24 relative rounded-md overflow-hidden border border-neutral-300">
                     <Image
-                      src={urlFor(product.image).url()}
-                      alt={product.imgAlt}
+                      src={urlFor(sneakers[0]?.image).url()}
+                      alt={sneakers[0]?.title}
                       fill
                       className="w-full h-full absolute object-cover object-center"
                     />
-                    <p>{product?._type}</p>
+                    <p>{sneakers[0]?._type}</p>
                   </div>
 
-                </Link> */}
+                </Link>
             </div>
           }
           <div className="w-auto h-20 md:h-24 bg-[#ddd6d6] rounded-md grid place-items-center">Shirts</div>
