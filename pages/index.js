@@ -37,7 +37,7 @@ export async function getStaticProps() {
   const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
     _id,title,image,slug,price,_createdAt,offPrice
   } `)
-  const firstProduct = await client.fetch(`*[_type in ["shorts", "sneakers","glasses"] && position == "first" ]{
+  const firstProduct = await client.fetch(`*[_type in ["shorts", "sneakers","glasses","watches"] && position == "first" ]{
     image,slug
   } `)
 

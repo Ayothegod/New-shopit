@@ -24,7 +24,7 @@ const Carousel = ({firstProduct}) => {
       <div className="max-w-[72rem] mx-auto md:flex ">
 
       <section
-          className="hidden md:inline-block border-2 border-neutral-300 mx-1 px-1 w-[16rem]"
+          className="hidden md:inline-block border-2 border-neutral-300 mx-1 px-1 min-w-[16rem]"
           >
           <div className="flex flex-col justify-between">
           <div >
@@ -45,8 +45,11 @@ const Carousel = ({firstProduct}) => {
           <Image src={urlFor(firstProduct[0].image).url()} alt="imagine" className="sm:h-48 md:h-80 object-cover object-center w-screen" fill/>
         </div> */}
 
+        <div>
 
-       <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller my-2 py-2 ">
+        
+        <p>New Arrival</p>
+       <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
           {firstProduct.map((product) => (
             <div>
               <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
@@ -59,6 +62,7 @@ const Carousel = ({firstProduct}) => {
               </div>
             </div>
           ))}
+        </div>
         </div>
 
     </div>
