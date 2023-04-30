@@ -4,7 +4,7 @@ import { client } from "@/utils/client";
 import Link from "next/link";
 import CategoryItem from "./CategoryItem";
 
-const Category = ({ sneakers }) => {
+const Category = ({ sneakers,shorts,glasses }) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
@@ -17,10 +17,10 @@ const Category = ({ sneakers }) => {
             <CategoryItem category={sneakers} />
           </Link>
           <Link href="/shirts">
-            <CategoryItem category={sneakers} />
+            <CategoryItem category={shorts} />
           </Link>
           <Link href="/shorts">
-            <CategoryItem category={sneakers} />
+            <CategoryItem category={glasses} />
           </Link>
           <Link href="/glasses">
             <CategoryItem category={sneakers} />

@@ -8,7 +8,7 @@ const Body = ({sneakers,firstProduct,shorts,watches,glasses}) => {
   return (
     <div>
       <Carousel firstProduct={firstProduct}/>
-      <Category sneakers={sneakers} />
+      <Category sneakers={sneakers} watches={watches} shorts={shorts} glasses={glasses} />
 
       <Product products={sneakers} name="Sneakers"/>
       {/* <Product products={watches} /> */}
