@@ -27,10 +27,15 @@ const slug = ({ sneaker }) => {
       <Header/>
     <article>
       Hello
+
+      {
+        !sneaker && 
+        <p>Product is loading</p>
+      }
       <h1>{sneaker?.slug?.current}</h1>
       <h1>{sneaker?.title}</h1>
       {sneaker?.image && 
-      <div className="w-full h-48  md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
+      <div className="w-full h-48 sm:w-60 sm:h-60 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                 <Image
                   src={urlFor(sneaker.image).url()}
                   alt={sneaker.title}
