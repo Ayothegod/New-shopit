@@ -3,12 +3,12 @@ import Category from "./Category";
 import Filter from "./Filter";
 import Product from "./Product";
 
-const Body = ({sneakers}) => {
+const Body = ({sneakers,firstProduct}) => {
   return (
     <div>
-      <Carousel />
+      <Carousel firstProduct={firstProduct}/>
       <Category />
-      <Product sneakers={sneakers}/>
+      <Product sneakers={sneakers} />
       <Filter/>
     </div>
   );

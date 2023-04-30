@@ -6,27 +6,25 @@ import imager from "utils/asset/20220425_205815.jpg";
 import imagine from "utils/asset/20220506_041426.jpg";
 import imaginate from "utils/asset/20220519_195313.jpg";
 import ima from "utils/asset/20220525_230857.jpg";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "@/utils/client";
 
-const Carousel = () => {
-  const [current, setCurrent] = useState(0);
-  const slides = [
-    { imgUrl: slider, imgAlt: "slider" },
-    { imgUrl: sliderfs, imgAlt: "sliderfs" },
-    { imgUrl: imager, imgAlt: "imager" },
-    { imgUrl: imagine, imgAlt: "imagine" },
-    { imgUrl: imaginate, imgAlt: "imaginate" },
-    { imgUrl: ima, imgAlt: "ima" },
-  ];
 
-  const gotoSlide = (slideIndex) => {
-    setCurrent(slideIndex);
-  };
+const Carousel = ({firstProduct}) => {
+  console.log(firstProduct)
+
+    function urlFor(source) {
+    return imageUrlBuilder(client).image(source);
+  }
+
+
+
   return (
     <div className="p-1  bg-white">
       <div className="max-w-[72rem] mx-auto md:flex ">
 
       <section
-          className="hidden md:inline-block border-2 border-neutral-300 mx-1 px-1 w-[20rem]"
+          className="hidden md:inline-block border-2 border-neutral-300 mx-1 px-1 w-[16rem]"
           >
           <div className="flex flex-col justify-between">
           <div >
@@ -43,17 +41,17 @@ const Carousel = () => {
           </div>
         </section>
 
-        <div className="hidden mx-1 sm:inline-block">
-          <Image src={slider} alt="imagine" className="sm:h-48 md:h-80 object-cover object-center w-screen"/>
-        </div>
+        {/* <div className="hidden mx-1 my-0 sm:inline-block">
+          <Image src={urlFor(firstProduct[0].image).url()} alt="imagine" className="sm:h-48 md:h-80 object-cover object-center w-screen" fill/>
+        </div> */}
 
 
-       <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller my-2 py-2 sm:hidden">
-          {slides.map((product) => (
+       <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller my-2 py-2 ">
+          {firstProduct.map((product) => (
             <div>
-              <div className="w-48 h-48 relative rounded-md overflow-hidden">
+              <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                 <Image
-                  src={product.imgUrl}
+                  src={urlFor(product.image).url()}
                   alt={product.imgAlt}
                   fill
                   className="w-full h-full absolute object-cover object-center"

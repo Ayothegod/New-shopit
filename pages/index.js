@@ -24,7 +24,7 @@ export default function Home({sneakers,firstProduct}) {
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-        <Body sneakers={sneakers}/>
+        <Body sneakers={sneakers} firstProduct={firstProduct}/>
         <Footer/>
       </main>
     </>
@@ -38,7 +38,7 @@ export async function getStaticProps() {
     _id,title,image,slug,price,_createdAt,offPrice
   } `)
   const firstProduct = await client.fetch(`*[_type in ["shorts", "sneakers","glasses"] && position == "first" ]{
-    _id,title,image,slug,price,_createdAt,offPrice
+    image,slug
   } `)
 
   return {

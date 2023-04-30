@@ -5,7 +5,6 @@ import imagine from "utils/asset/20220506_041426.jpg";
 import imaginate from "utils/asset/20220519_195313.jpg";
 import ima from "utils/asset/20220525_230857.jpg";
 import Image from "next/image";
-import ImageBox from "./ImageBox";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
 import Link from "next/link";
