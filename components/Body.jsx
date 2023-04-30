@@ -9,7 +9,8 @@ const Body = ({sneakers,firstProduct}) => {
       <Carousel firstProduct={firstProduct}/>
       <Category sneakers={sneakers} />
       <Product sneakers={sneakers} />
-      <Filter/>
+      <Product sneakers={sneakers} />
+      {/* <Filter/> */}
     </div>
   );
 };
