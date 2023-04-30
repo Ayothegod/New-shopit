@@ -20,12 +20,12 @@ const Category = ({sneakers}) => {
               <Link href="/sneakers">
                   <div className="w-auto h-20 md:h-24 relative rounded-md overflow-hidden border border-neutral-300">
                     <Image
-                      src={urlFor(sneakers[0]?.image).url()}
-                      alt={sneakers[0]?.title}
+                      src={urlFor(sneakers[8]?.image).url()}
+                      alt={sneakers[8]?.title}
                       fill
                       className="w-full h-full absolute object-cover object-center"
                     />
-                    <p>{sneakers[0]?._type}</p>
+                    <p>{sneakers[8]?._type}</p>
                   </div>
 
                 </Link>
