@@ -25,7 +25,7 @@ const Category = ({sneakers}) => {
                       fill
                       className="w-full h-full absolute object-cover object-center"
                     />
-                    <p className="absolute top-2">{sneakers[8]?._type}</p>
+                    <p className="absolute inset-0 grid place-items-center uppercase font-bold backdrop-brightness-50 text-white  ">{sneakers[8]?._type}</p>
                   </div>
 
                 </Link>
