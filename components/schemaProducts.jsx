@@ -19,7 +19,7 @@ const SchemaProducts = ({ sneakers }) => {
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {sneakers.map((sneaker) => (
-            <>
+            <div>
             <Link href={`/prod/${sneaker.slug.current}`}>
               <div className="">
                 <div className="w-full h-48 sm:w-full sm:h-60 md:w-full md:h-80  relative rounded-md overflow-hidden">
@@ -34,12 +34,13 @@ const SchemaProducts = ({ sneakers }) => {
                   <p className="font-medium text-sm text-neutral-600 capitalize">{sneaker.title}</p>
                   <div className="flex justify-between items-center mt-1">
                     <p className="text-sm text-neutral-900 font-bold">#{sneaker.price}</p>
-                    <button className="rounded-md bg-orange-600 py-1 px-2 text-white font-medium text-sm">Add to Cart</button>
+                    
                   </div>
                 </div>
               </div>
             </Link>
-            </>
+            <button className="rounded-md mt-1 bg-orange-600 py-2 px-2 w-full md:w-2/3 text-white font-medium text-sm">Add to Cart</button>
+            </div>
 
           ))}
         </div>
