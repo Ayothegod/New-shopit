@@ -11,9 +11,6 @@ import { useStore } from "@/utils/store";
 
 export default function Home({sneakers,firstProduct}) {
 
-// console.log({firstProduct});
-// console.log({sneakers});
-
   return (
     <>
     <Head>
