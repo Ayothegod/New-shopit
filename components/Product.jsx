@@ -3,7 +3,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
 import Link from "next/link";
 
-const Product = ({ sneakers }) => {
+const Product = ({ products,name }) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
@@ -14,38 +14,40 @@ const Product = ({ sneakers }) => {
     <div className="p-1  bg-white mt-1 ">
       <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="flex  justify-between items-center">
-          <p className="font-bold text-xl text-orange-600">Sneakers</p>
+          <p className="font-bold text-xl text-orange-600">{name}</p>
           <Link href="/sneakers">
-          <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
+            <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
           </Link>
         </div>
 
-        <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller  py-2 ">
-          {sneakers.map((sneaker) => (
-            <>
-            <Link href={`/prod/${sneaker.slug.current}`}>
-              <div>
-                <div className="w-60 h-60 relative rounded-md overflow-hidden">
-                  <Image
-                    src={urlFor(sneaker.image).url()}
-                    alt={sneaker.title}
-                    fill
-                    className="w-full h-full absolute object-cover object-center"
-                  />
-                </div>
-                <div>
-                  <p className="font-medium text-neutral-700 text-lg">{sneaker.title}</p>
-                </div>
-              </div>
-            </Link>
-            </>
-
-          ))}
-        </div>
+        {products && (
+          <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller  py-2 ">
+            {products.map((product) => (
+              <>
+                <Link href={`/prod/${product.slug.current}`}>
+                  <div>
+                    <div className="w-60 h-60 relative rounded-md overflow-hidden">
+                      <Image
+                        src={urlFor(product?.image).url()}
+                        alt={product.title}
+                        fill
+                        className="w-full h-full absolute object-cover object-center"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-700 text-lg">
+                        {product.title}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
 export default Product;
-
