@@ -11,27 +11,31 @@ const SchemaProducts = ({ sneakers }) => {
   // console.log(products);
 
   return (
-    <div className="p-1  bg-white mt-1 ">
+    <div className="py-4 px-2  bg-white my-4 ">
       <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="flex items-center">
           <p className="font-bold text-xl text-orange-600">Shoes</p>
         </div>
 
-        <div className="grid grid-cols-2  md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {sneakers.map((sneaker) => (
             <>
             <Link href={`/prod/${sneaker.slug.current}`}>
-              <div>
-                <div className="w-40 h-48 sm:w-72 sm:h-60 relative rounded-md overflow-hidden">
+              <div className="">
+                <div className="w-full h-48 sm:w-full sm:h-60 md:w-full md:h-80  relative rounded-md overflow-hidden">
                   <Image
                     src={urlFor(sneaker.image).url()}
                     alt={sneaker.title}
                     fill
-                    className="w-full h-full absolute object-cover object-center"
+                    className="w-full h-full absolute object-cover object-center border border-neutral-200"
                   />
                 </div>
                 <div>
-                  <p className="font-medium text-neutral-700 text-lg">{sneaker.title}</p>
+                  <p className="font-medium text-black">{sneaker.title}</p>
+                  <div className="flex justify-between items-center mt-1">
+                    <p className="text-sm text-neutral-600">#{sneaker.price}</p>
+                    <button className="rounded-md bg-orange-600 py-1 px-2 text-white font-medium text-sm">Add to Cart</button>
+                  </div>
                 </div>
               </div>
             </Link>
