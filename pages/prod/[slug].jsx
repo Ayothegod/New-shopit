@@ -51,7 +51,7 @@ const slug = ({ sneaker, recommendProduct }) => {
               <h1>{sneaker?.price}</h1>
             </section>
 
-            <section>
+            {/* <section>
               <div>
                 <p>Recommended</p>
                 <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
@@ -73,7 +73,8 @@ const slug = ({ sneaker, recommendProduct }) => {
               </div>
 
               {/* </div> */}
-            </section>
+            </section> */}
+
           </div>
         </section>
 
