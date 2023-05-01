@@ -16,13 +16,13 @@ const Category = ({ sneakers,shorts,glasses }) => {
           <Link href="/sneakers">
             <CategoryItem category={sneakers} />
           </Link>
-          <Link href="/shirts">
+          <Link href="/shorts">
             <CategoryItem category={shorts} />
           </Link>
-          <Link href="/shorts">
+          <Link href="/glasses">
             <CategoryItem category={glasses} />
           </Link>
-          <Link href="/glasses">
+          <Link href="/sneakers">
             <CategoryItem category={sneakers} />
           </Link>
         </div>
