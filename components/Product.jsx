@@ -3,7 +3,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
 import Link from "next/link";
 
-const Product = ({ products,name }) => {
+const Product = ({ products,name,locaction }) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
@@ -15,7 +15,7 @@ const Product = ({ products,name }) => {
       <div className="max-w-[72rem] mx-auto flex flex-col ">
         <div className="flex  justify-between items-center">
           <p className="font-bold text-xl text-orange-600">{name}</p>
-          <Link href="/sneakers">
+          <Link href={`/${location}`}>
             <p className="text-neutral-500 font-medium text-sm">SEE MORE</p>
           </Link>
         </div>
