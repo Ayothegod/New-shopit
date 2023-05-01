@@ -60,8 +60,8 @@ const slug = ({ sneaker, recommendProduct }) => {
                       <Link href={`/item/${product?.slug.current}`}>
                         <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                           <Image
-                            src={urlFor(item?.image).url()}
-                            alt={product?.imgAlt}
+                            src={urlFor(product?.image).url()}
+                            alt={product?.title}
                             fill
                             className="w-full h-full absolute object-cover object-center"
                           />
