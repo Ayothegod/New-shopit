@@ -20,7 +20,7 @@ export default function Sneakers({sneakers}) {
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-            {/* <SchemaProducts pageproducts={sneakers} name="Sneakers"/> */}
+            <SchemaProducts pageproducts={sneakers} name="Sneakers"/>
         <Footer/>
       </main>
     </>
