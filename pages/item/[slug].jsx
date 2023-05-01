@@ -57,10 +57,10 @@ const slug = ({ sneaker, recommendProduct }) => {
                   {recommendProduct && 
                   recommendProduct.map((product) => (
                     <div>
-                      <Link href={`/product/${product?.slug.current}`}>
+                      <Link href={`/item/${product?.slug.current}`}>
                         <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                           <Image
-                            src={urlFor(product?.image).url()}
+                            src={urlFor(item?.image).url()}
                             alt={product?.imgAlt}
                             fill
                             className="w-full h-full absolute object-cover object-center"
@@ -82,6 +82,7 @@ const slug = ({ sneaker, recommendProduct }) => {
     </>
   );
 };
+export default slug;
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
@@ -114,4 +115,3 @@ export async function getStaticProps(context) {
   };
 }
 
-export default slug;

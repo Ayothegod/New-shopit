@@ -20,7 +20,7 @@ const SchemaProducts = ({ pageproducts,name}) => {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {pageproducts.map((product) => (
             <div>
-            <Link href={`/product/${product.slug.current}`}>
+            <Link href={`/item/${product.slug.current}`}>
               <div className="">
                 <div className="w-full h-48 sm:w-full sm:h-60 md:w-full md:h-80  relative rounded-md overflow-hidden">
                   <Image
