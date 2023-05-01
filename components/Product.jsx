@@ -7,8 +7,6 @@ const Product = ({ products,name,goto }) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
-  // console.log(sneakers);
-  // console.log(products);
 
   return (
     <div className="p-1  bg-white mt-1 ">

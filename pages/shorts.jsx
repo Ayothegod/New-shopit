@@ -20,7 +20,7 @@ console.log({shorts});
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-            <SchemaProducts pageProducts={shorts} name="Shorts"/>
+            <SchemaProducts pageproducts={shorts} name="Shorts"/>
         <Footer/>
       </main>
     </>

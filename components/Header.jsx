@@ -4,6 +4,7 @@ import {FaCartArrowDown,FaCartPlus } from "react-icons/fa";
 import {AiOutlineDown} from "react-icons/ai";
 import {MdOutlineArrowForward, MdOutlineClose} from 'react-icons/md';
 import { useState } from "react";
+import Link from "next/link";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -21,9 +22,11 @@ const Header = () => {
             <div onClick={() => setOpenMenu(!openMenu)}>
               <GiHamburgerMenu className="md:hidden cursor-pointer" />
             </div>
+            <Link href="/">
             <p className="text-lg md:text-2xl md:py-2 font-russo font-extrabold ">
               Shop-It 
             </p>
+            </Link>
           </div>
 
           {/* mobile icons on header */}

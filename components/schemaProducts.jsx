@@ -5,7 +5,7 @@ import Link from "next/link";
 import {FaCartPlus } from "react-icons/fa";
 
 
-const SchemaProducts = ({ pageProducts,name}) => {
+const SchemaProducts = ({ pageproducts,name}) => {
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
@@ -18,7 +18,7 @@ const SchemaProducts = ({ pageProducts,name}) => {
         </div>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {pageProducts.map((product) => (
+          {pageproducts.map((product) => (
             <div>
             <Link href={`/product/${product.slug.current}`}>
               <div className="">

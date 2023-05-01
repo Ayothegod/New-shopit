@@ -9,7 +9,7 @@ import { client } from "@/utils/client";
 
 export default function Sneakers({sneakers}) {
 
-console.log({sneakers});
+// console.log({sneakers});
   return (
     <>
     <Head>
@@ -20,7 +20,7 @@ console.log({sneakers});
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-            <SchemaProducts pageProducts={sneakers} name="Sneakers"/>
+            <SchemaProducts pageproducts={sneakers} name="Sneakers"/>
         <Footer/>
       </main>
     </>
