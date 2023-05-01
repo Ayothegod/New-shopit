@@ -9,35 +9,28 @@ import Head from "next/head";
 import Link from "next/link";
 import {AiFillHeart} from "react-icons/ai"
 import {FaCartPlus} from "react-icons/fa"
-import { getDatabase, ref, set  } from "firebase/database";
 import { useState } from "react";
-import { database,app } from "@/utils/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/utils/firebase";
 
 const slug = ({ sneaker, recommendProduct }) => {
-  // const database = getDatabase();
   const [name,setName] = useState("Ayomide")
   const [email,setEmail] = useState("Ayodasilva12@gmail.com")
 
-  // const db = database();
 
-function writeUserData(name,email) {
-  const db = getDatabase(app);
-  set(ref(db, 'users/' ), {
-    username: name,
-    email: email,
-    // profile_picture : imageUrl
-  });
-}
-const addData = () => {
+const addData = async() => {
  try {
-   writeUserData()
-   console.log("data saved successfully")
- } catch (error) {
-  console.log("error :", error)
- }
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
 }
-
-
+}
 
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
@@ -55,10 +48,11 @@ const addData = () => {
         <Header />
 
         <button onClick={addData} className="bg-red-600 p-4 rounded-md text-white">Add to db</button>
-        <section className="p-2 my-1 bg-white">
-          {/* <div className="max-w-[72rem] mx-auto ">
 
-            <section className="flex flex-col sm:flex-row mb-20">
+        <section className="p-2 my-1 bg-white">
+          <div className="max-w-[72rem] mx-auto ">
+
+            {/* <section className="flex flex-col sm:flex-row mb-20">
               {!sneaker && (
                 <div className="grid place-items-center">
                   <Image src={loader} alt="loader" className="animate-spin " />
@@ -88,9 +82,9 @@ const addData = () => {
                         <button className="py-2 bg-orange-600 rounded-md text-white px-8"><FaCartPlus/></button>
                 </div>
               </div>
-            </section>
+            </section> */}
 
-            <section>
+            {/* <section>
               <div>
                 <p>Recommended</p>
                 <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller py-2 ">
@@ -112,9 +106,9 @@ const addData = () => {
                 </div>
               </div>
 
-            </section>
+            </section> */}
 
-          </div> */}
+          </div>
         </section>
 
         <Footer />
