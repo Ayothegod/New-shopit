@@ -35,7 +35,7 @@ const Carousel = ({ firstProduct }) => {
           <div className="flex gap-2 py-1 overflow-scroll overflow-y-hidden scroller">
             {firstProduct.map((product) => (
               <div>
-                <Link href={`/prod/${product.slug.current}`}>
+                <Link href={`/product/${product.slug.current}`}>
                   <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                     <Image
                       src={urlFor(product.image).url()}

@@ -24,7 +24,7 @@ const Product = ({ products,name }) => {
           <div className="flex gap-2 overflow-scroll overflow-y-hidden scroller  py-2 ">
             {products.map((product) => (
               <>
-                <Link href={`/prod/${product.slug.current}`}>
+                <Link href={`/product/${product.slug.current}`}>
                   <div>
                     <div className="w-60 h-60 relative rounded-md overflow-hidden">
                       <Image
