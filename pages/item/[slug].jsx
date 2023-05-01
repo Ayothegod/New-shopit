@@ -38,7 +38,7 @@ const slug = ({ sneaker, recommendProduct }) => {
               )}
 
               {sneaker?.image && (
-                <div className="w-full h-60 sm:w-60 sm:h-60 sm:h-60 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
+                <div className="w-full h-60 sm:w-60 sm:h-60 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                   <Image
                     src={urlFor(sneaker.image).url()}
                     alt={sneaker.title}
