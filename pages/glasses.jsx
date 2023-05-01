@@ -20,6 +20,7 @@ console.log({glasses});
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
+        omo
             {/* <SchemaProducts pageproducts={glasses} name="Shorts"/> */}
         <Footer/>
       </main>
