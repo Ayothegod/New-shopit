@@ -17,15 +17,15 @@ const slug = ({ sneaker, recommendProduct }) => {
   const [name,setName] = useState("Ayomide")
   const [email,setEmail] = useState("Ayodasilva12@gmail.com")
 
+  
 
 const addData = async() => {
  try {
-  const docRef = await addDoc(collection(db, "users"), {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
+  const docRef = await addDoc(collection(db, "cartBasket"), {
+    cartItem:sneaker,
+
   });
-  
+
   console.log("Document written with ID: ", docRef.id);
 } catch (e) {
   console.error("Error adding document: ", e);
