@@ -7,30 +7,41 @@ import Footer from "@/components/Footer";
 import loader from "@/utils/asset/icons8-loading-50.png";
 import Head from "next/head";
 import Link from "next/link";
-import {AiFillHeart} from "react-icons/ai"
-import {FaCartPlus} from "react-icons/fa"
-import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { AiFillHeart } from "react-icons/ai";
+import { FaCartPlus } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "@/utils/firebase";
 
 const slug = ({ sneaker, recommendProduct }) => {
-  const [name,setName] = useState("Ayomide")
-  const [email,setEmail] = useState("Ayodasilva12@gmail.com")
+  const [name, setName] = useState("Ayomide");
+  const [email, setEmail] = useState("Ayodasilva12@gmail.com");
 
-  
+  // useEffect(()=> {
 
-const addData = async() => {
- try {
-  const docRef = await addDoc(collection(db, "cartBasket"), {
-    cartItem:sneaker,
+  // })
+  const getData = async () => {
+    const querySnapshot = await getDocs(collection(db, "cartBasket"));
+    if(querySnapshot){
 
-  });
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+    console.log(querySnapshot)
+  }
+  };
 
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
-}
+  const addData = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "cartBasket"), {
+        cartItem: sneaker,
+      });
+
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
@@ -47,11 +58,21 @@ const addData = async() => {
       <div className="bg-[#ddd6d6] min-h-screen">
         <Header />
 
-        <button onClick={addData} className="bg-red-600 p-4 rounded-md text-white">Add to db</button>
+        <button
+          onClick={addData}
+          className="bg-red-600 p-4 rounded-md text-white"
+        >
+          Add to db
+        </button>
+        <button
+          onClick={getData}
+          className="bg-purple-600 p-4 rounded-md text-white"
+        >
+          Get data from db
+        </button>
 
         <section className="p-2 my-1 bg-white">
           <div className="max-w-[72rem] mx-auto ">
-
             {/* <section className="flex flex-col sm:flex-row mb-20">
               {!sneaker && (
                 <div className="grid place-items-center">
@@ -107,7 +128,6 @@ const addData = async() => {
               </div>
 
             </section> */}
-
           </div>
         </section>
 
@@ -148,4 +168,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
