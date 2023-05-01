@@ -2,6 +2,8 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/utils/client";
 import Link from "next/link";
+import {AiFillHeart} from "react-icons/ai"
+import {FaCartPlus} from "react-icons/fa"
 
 const Product = ({ products,name,goto }) => {
   function urlFor(source) {
@@ -33,10 +35,12 @@ const Product = ({ products,name,goto }) => {
                       />
                     </div>
                     <div>
-                      <p className="font-medium text-neutral-700 text-lg">
+                      <p className="font-medium text-neutral-500 ">
                         {product.title}
                       </p>
-                    </div>
+
+                        <p className="font-bold"><span className="text-sm font-bold">#</span>{product.price}</p>
+           </div>
                   </div>
                 </Link>
               </>

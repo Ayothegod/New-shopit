@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import loader from "@/utils/asset/icons8-loading-50.png";
 import Head from "next/head";
 import Link from "next/link";
+import {AiFillHeart} from "react-icons/ai"
+import {FaCartPlus} from "react-icons/fa"
 
 const slug = ({ sneaker, recommendProduct }) => {
   function urlFor(source) {
@@ -25,9 +27,9 @@ const slug = ({ sneaker, recommendProduct }) => {
         <Header />
 
         <section className="p-2 my-1 bg-white">
-          <div className="max-w-[72rem] mx-auto md:flex ">
+          <div className="max-w-[72rem] mx-auto ">
 
-            <section className="">
+            <section className="flex flex-col sm:flex-row mb-20">
               {!sneaker && (
                 <div className="grid place-items-center">
                   <Image src={loader} alt="loader" className="animate-spin " />
@@ -36,7 +38,7 @@ const slug = ({ sneaker, recommendProduct }) => {
               )}
 
               {sneaker?.image && (
-                <div className="w-full h-48 sm:w-60 sm:h-60 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
+                <div className="w-full h-60 sm:w-60 sm:h-60 sm:h-60 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
                   <Image
                     src={urlFor(sneaker.image).url()}
                     alt={sneaker.title}
@@ -45,9 +47,18 @@ const slug = ({ sneaker, recommendProduct }) => {
                   />
                 </div>
               )}
+              <div>
+
               <h1>{sneaker?.title}</h1>
               <h1>{sneaker?.description}</h1>
               <h1>{sneaker?.price}</h1>
+              </div>
+              <div className="inline-block md:absolute">
+                <div>
+                  <button className="p-2 bg-orange-600 rounded-md text-white "><AiFillHeart/></button>
+                        <button className="py-2 bg-orange-600 rounded-md text-white px-8"><FaCartPlus/></button>
+                </div>
+              </div>
             </section>
 
             <section>
@@ -104,7 +115,7 @@ export async function getStaticProps(context) {
     { slug }
   );
   const recommendProduct = await client.fetch(
-    `*[_type in ["shorts", "sneakers","glasses","watches"] && position == "second" ] `
+    `*[_type in ["shorts", "sneakers","glasses","watches"] && position == "fifth" ] `
   );
 
   return {
