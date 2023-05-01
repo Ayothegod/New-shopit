@@ -9,8 +9,36 @@ import Head from "next/head";
 import Link from "next/link";
 import {AiFillHeart} from "react-icons/ai"
 import {FaCartPlus} from "react-icons/fa"
+import { getDatabase, ref, set  } from "firebase/database";
+import { useState } from "react";
+import { database,app } from "@/utils/firebase";
 
 const slug = ({ sneaker, recommendProduct }) => {
+  // const database = getDatabase();
+  const [name,setName] = useState("Ayomide")
+  const [email,setEmail] = useState("Ayodasilva12@gmail.com")
+
+  // const db = database();
+
+function writeUserData(name,email) {
+  const db = getDatabase(app);
+  set(ref(db, 'users/' ), {
+    username: name,
+    email: email,
+    // profile_picture : imageUrl
+  });
+}
+const addData = () => {
+ try {
+   writeUserData()
+   console.log("data saved successfully")
+ } catch (error) {
+  console.log("error :", error)
+ }
+}
+
+
+
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
@@ -26,8 +54,9 @@ const slug = ({ sneaker, recommendProduct }) => {
       <div className="bg-[#ddd6d6] min-h-screen">
         <Header />
 
+        <button onClick={addData} className="bg-red-600 p-4 rounded-md text-white">Add to db</button>
         <section className="p-2 my-1 bg-white">
-          <div className="max-w-[72rem] mx-auto ">
+          {/* <div className="max-w-[72rem] mx-auto ">
 
             <section className="flex flex-col sm:flex-row mb-20">
               {!sneaker && (
@@ -85,7 +114,7 @@ const slug = ({ sneaker, recommendProduct }) => {
 
             </section>
 
-          </div>
+          </div> */}
         </section>
 
         <Footer />
