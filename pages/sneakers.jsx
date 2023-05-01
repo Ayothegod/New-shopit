@@ -20,7 +20,7 @@ console.log({sneakers});
       </Head>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-            <SchemaProducts sneakers={sneakers}/>
+            <SchemaProducts pageProducts={sneakers} name="Sneakers"/>
         <Footer/>
       </main>
     </>
@@ -30,7 +30,9 @@ console.log({sneakers});
 
 export async function getStaticProps() {
 
-  const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc) `)
+  const sneakers = await client.fetch(`*[_type == "sneakers"] | order(_createdAt desc){
+    title,slug,image,price
+  } `)
   return {
     props: {
       sneakers,
