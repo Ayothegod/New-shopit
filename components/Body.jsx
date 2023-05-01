@@ -10,10 +10,10 @@ const Body = ({sneakers,firstProduct,shorts,watches,glasses}) => {
       <Carousel firstProduct={firstProduct}/>
       <Category sneakers={sneakers} watches={watches} shorts={shorts} glasses={glasses} />
 
-      <Product products={sneakers} name="Sneakers" locaction="sneakers"/>
+      <Product products={sneakers} name="Sneakers" goto="sneakers"/>
       {/* <Product products={watches} /> */}
-      <Product products={shorts} name="Shorts"/>
-      <Product products={glasses} name="Glasses"/>
+      <Product products={shorts} name="Shorts" goto="shorts"/>
+      <Product products={glasses} name="Glasses" goto="glasses"/>
       {/* <Filter/> */}
     </div>
   );
