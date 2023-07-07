@@ -5,7 +5,7 @@ import { client } from "@/utils/client";
 import Link from "next/link";
 
 const Carousel = ({ firstProduct }) => {
-  console.log(firstProduct);
+  // console.log(firstProduct);
 
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
@@ -33,7 +33,7 @@ const Carousel = ({ firstProduct }) => {
         <div>
           <p className="text-orange-600 font-semibold text-xl">New Arrival</p>
           <div className="flex gap-2 py-1 overflow-scroll overflow-y-hidden scroller">
-            {firstProduct.map((product) => (
+            {/* {firstProduct.map((product) => (
               <div>
                 <Link href={`/item/${product.slug.current}`}>
                   <div className="w-48 h-48 sm:h-48 sm:w-48 md:w-80 md:h-80 relative rounded-md overflow-hidden border border-neutral-300">
@@ -46,7 +46,7 @@ const Carousel = ({ firstProduct }) => {
                   </div>
                 </Link>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
 

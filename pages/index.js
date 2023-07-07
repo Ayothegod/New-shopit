@@ -4,16 +4,22 @@ import Footer from "@/components/Footer";
 import Body from "@/components/Body";
 import { client } from "@/utils/client";
 import imageUrlBuilder from "@sanity/image-url";
+import { useStore } from "@/utils/store";
 
 export default function Home(
-  // {sneakers,firstProduct,shorts,watches,glasses}
+  {sneakers,firstProduct,shorts,watches,glasses}
   ) {
+    const [sneaker, setSneakers] = useStore((state) => [state.sneakers, state.setSneakers])
+    console.log(sneaker);
+    // console.log({sneakers,firstProduct,shorts,watches,glasses})
 
   return (
     <>
       <main className="bg-[#ddd6d6] min-h-screen ">
         <Header/>
-        {/* <Body sneakers={sneakers} firstProduct={firstProduct} watches={watches} glasses={glasses} shorts={shorts} /> */}
+        <Body 
+        // sneakers={sneakers} firstProduct={firstProduct} watches={watches} glasses={glasses} shorts={shorts} 
+        /> 
         <Footer/>
       </main>
     </>
