@@ -10,38 +10,10 @@ import Link from "next/link";
 import { AiFillHeart } from "react-icons/ai";
 import { FaCartPlus } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { collection, addDoc, getDocs } from "firebase/firestore";
-import { db } from "@/utils/firebase";
 
 const slug = ({ sneaker, recommendProduct }) => {
   const [name, setName] = useState("Ayomide");
   const [email, setEmail] = useState("Ayodasilva12@gmail.com");
-
-  // useEffect(()=> {
-
-  // })
-  const getData = async () => {
-    const querySnapshot = await getDocs(collection(db, "cartBasket"));
-    if(querySnapshot){
-
-      querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
-    console.log(querySnapshot)
-  }
-  };
-
-  const addData = async () => {
-    try {
-      const docRef = await addDoc(collection(db, "cartBasket"), {
-        cartItem: sneaker,
-      });
-
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-  };
 
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
